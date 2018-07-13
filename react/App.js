@@ -28,7 +28,7 @@ export default class App extends Component {
                 <RenderRouter>
                     <Switch>
                         <Route exact path="/" render={(props)=><MainPage frontRedux={frontRedux} contacts={contacts} {...props}/>}/>
-                        <Route path="/adv" render={(props)=><Adv frontRedux={frontRedux} {...props}/>}/>
+                        <Route path="/adv/:position" render={(props)=><Adv frontRedux={frontRedux} {...props}/>}/>
                         <Route path="/service/:position" render={(props)=><Service frontRedux={frontRedux} {...props}/>}/>
                         <Route path="/gallery" render={(props)=><Gallery frontRedux={frontRedux} {...props}/>}/>
                         <Route exact path="/news" render={(props)=><News frontRedux={frontRedux} {...props}/>}/> //+ путь не забудь

@@ -6,6 +6,7 @@
   position: relative;
 
   .title{
+
     z-index: 1;
     h2{
       font-size: 48px;
@@ -69,8 +70,12 @@
     align-items: center;
     justify-content: flex-start;
     overflow: hidden;
+    //overflow-x: auto;
     width: 100%;
     margin-top: 50px;
+    //-webkit-overflow-scrolling: touch;
+    //flex-wrap: nowrap;
+    //overflow-x: auto;
     .card{
       width: 360px;
       min-width: 360px;
@@ -84,7 +89,8 @@
       border-radius: 5px;
       display: flex;
       align-items: flex-start;
-      transition: .25s;
+      //transition: .55s;
+      transition: 0.4s cubic-bezier(0.61,-0.19, 0.7,-0.11);
       cursor: pointer;
 
       &:before{

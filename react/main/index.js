@@ -22,7 +22,7 @@ export default class MainPage extends Component {
             <div className="main-page">
                 <Header contacts={ contacts.socials } />
                 <Intro/>
-                <Adv/>
+                <Adv advs={frontRedux.advs} history={history} />
                 <Video/>
                 <Service history={history} services={frontRedux.services}/>
                 <Gallery history={history}/>

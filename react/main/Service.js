@@ -26,9 +26,12 @@ export default class Service extends Component {
         if (activeServ < srvs.length - 1) {
             const widthOfCard = $(allServ[activeServ]).outerWidth(true);
 
-            $(allServ[activeServ]).animate({
+            // $(allServ[activeServ]).animate({
+            //     marginLeft: `-${widthOfCard}px`
+            // }, 'fast');
+            $(allServ[activeServ]).css({
                 marginLeft: `-${widthOfCard}px`
-            }, 500);
+            });
             $('#bigImg').css("background-image", `url(/src/services/${srvs[activeServ + 1].img})`)
             this.setState({
                 activeServ: activeServ + 1
@@ -43,9 +46,12 @@ export default class Service extends Component {
         if (activeServ > 0) {
             // const widthOfCard = $(allServ[activeServ]).outerWidth(true);
 
-            $(allServ[activeServ - 1]).animate({
+            // $(allServ[activeServ - 1]).animate({
+            //     marginLeft: `0px`
+            // }, 'fast', 'linear');
+            $(allServ[activeServ - 1]).css({
                 marginLeft: `0px`
-            }, 500);
+            });
             $('#bigImg').css("background-image", `url(/src/services/${srvs[activeServ - 1].img})`)
             this.setState({
                 activeServ: activeServ - 1
@@ -74,7 +80,7 @@ export default class Service extends Component {
         return (
             <div className="service" id={`service`}>
                 <div className="title">
-                    <h2>Наши Услуги</h2>
+                    <h2 className={`with-left-stroke`}>Наши Услуги</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, inventore nisi. Amet eligendi et modi quibusdam sequi? Accusamus at cupiditate delectus dolore eveniet, illo, molestias nemo quae quibusdam soluta vitae!</p>
                 </div>
                 <div id="bigImg" style={{backgroundImage: `url(/src/services/${srvs[0].img})`}}/>

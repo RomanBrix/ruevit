@@ -25,6 +25,33 @@ const InitialState = Immutable.fromJS({
             title: 'Физическая охрана обьектов',
             img: 'image.png'
         },
+    ],
+    advs: [
+        {
+            title: 'Headline',
+            desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem enim excepturi odio, reiciendis saepe sit. Delectus facere iste maiores placeat provident soluta ullam ut voluptatem?',
+            img: 'image.png'
+        },
+        {
+            title: 'Headline',
+            desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem enim excepturi odio, reiciendis saepe excepturi odio, reiciendis saepe sit. Delectus facere iste maiores placeat provident soluta ullam ut voluptatem?',
+            img: 'image.png'
+        },
+        {
+            title: 'Headline',
+            desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem enim excepturi odio, reiciendis saepe sit. Delectus facere iste maiores placeat provident soluta ullam ut voluptatem?',
+            img: 'image.png'
+        },
+        {
+            title: 'Headline',
+            desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem enim excepturi odio, reiciendis saepe sit. Delectus facere iste maiores placeat provident soluta ullam ut voluptatem?',
+            img: 'image.png'
+        },
+        {
+            title: 'Headline',
+            desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem enim excepturi odio, reiciendis saepe sit. Delectus facere iste maiores placeat provident soluta ullam ut voluptatem?',
+            img: 'image.png'
+        },
     ]
 });
 

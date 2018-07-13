@@ -5,14 +5,6 @@ export default class Video extends Component {
 
     toggleFullScreenVideo(state){
         if(state === 'close') {
-            // console.log(player);
-            // $('.youtube_player_iframe').each(function(){
-            //     $('.youtube_player_iframe').each(function(){
-            //         console.log(this);
-            //         // $(this).stopVideo();
-            //     });
-            //
-            // });
             $('.youtube_player_iframe')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
         }
         $('#video-layer-on').fadeToggle().css('display', 'flex');
@@ -26,7 +18,7 @@ export default class Video extends Component {
                     this.toggleFullScreenVideo('close');
                 }}>
                     <iframe id="ytplayer" className={`youtube_player_iframe`} type="text/html" width="720" height="405"
-                            src="https://www.youtube.com/embed/rV40J4MpNYc?autoplay=1&disablekb=1&loop=1&rel=0&showinfo=0&color=white&enablejsapi=1"
+                            src="https://www.youtube.com/embed/rV40J4MpNYc?disablekb=1&loop=1&rel=0&showinfo=0&color=white&enablejsapi=1"
 
                             frameBorder="0" allowFullScreen/>
                     {/*<i className='icon-cancel'/>*/}
@@ -35,10 +27,9 @@ export default class Video extends Component {
                     backgroundImage: `url(/src/video/image.png)`
                 }}/>
                 <div className="open-video">
-                    <div className="video-play" onClick={(e)=>{
+                    <div className="video-play" onClick={()=>{
                         this.toggleFullScreenVideo('open');
-                        // console.log(e.target);
-                        // e.stopPropagation();
+                        $('.youtube_player_iframe')[0].contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
                     }}>
                         <i className="icon-play"/>
                     </div>
