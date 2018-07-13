@@ -81,11 +81,13 @@
           i{
             //color: #026fc2;
             color: rgba(158, 125, 49, 1.000);
+            background: white;
+
           }
         }
         i{
-          background: #9dafbd;
-          color: white;
+          background: rgba(158, 125, 49, 1.000);
+          color: black;
           padding: 7px 9px;
           border-radius: 50%;
           transition: .25s;

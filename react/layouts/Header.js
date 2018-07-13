@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import logo from '../../src/logo.png';
+import logo from '../../src/logo.svg';
 import $ from "jquery";
 
 export default class Header extends Component {
