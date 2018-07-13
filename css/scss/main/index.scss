@@ -1,0 +1,11 @@
+.main-page{
+  h2{
+    font-weight: 100;
+  }
+  @import "intro";
+  @import "adv";
+  @import "video";
+  @import "service";
+  @import "gallery";
+  @import "contact";
+}

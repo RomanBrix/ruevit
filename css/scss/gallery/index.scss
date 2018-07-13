@@ -1,0 +1,117 @@
+.big-gallery{
+    //min-height: 100vh;
+    .fullScreenPhoto{
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 20000000;
+      background: rgba(0, 0, 0, .8);
+      width: 100%;
+      display: none;
+      height: 100vh;
+      align-items: center;
+      justify-content: center;
+      #f-photo{
+        width: 80%;
+        height: 80%;
+        background: #f4f7fa no-repeat center center ;//fixed
+        background-size: cover;
+      }
+      .settings{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 3em;
+        color: white;
+        .icon-left-open-big, .icon-right-open-big{
+          cursor: pointer;
+          transition: .2s;
+          &:hover{
+            transform: scale(1.1);
+          }
+        }
+        .not-active{
+          opacity: .3;
+          cursor: default;
+          &:hover{
+            transform: scale(1);
+          }
+        }
+        .icon-cancel{
+          transition: .2s;
+          position: absolute;
+          top: 20px;
+          right: 20px;
+          cursor: pointer;
+          &:hover{
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+    .gallery-head{
+      margin-left: 100px;
+      margin-right: 100px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      flex-flow: row wrap;
+      h2{
+        font-size: 3em;
+        margin-bottom: 0;
+      }
+      .btn{
+        cursor: pointer;
+        color: #84b3d1;
+        margin-top: 10px;
+      }
+    }
+    .gallery-container{
+      margin: 75px 0;
+      //background: #000;
+      box-sizing: border-box;
+      padding: 0 100px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      height: 80%;
+      align-items: center;
+      align-content: center;
+      @media screen and (max-width: 700px) {
+        padding: 0 50px;
+
+      }
+      .gallery-img{
+        width: 350px;
+        height: 200px;
+        max-width: 350px;
+        min-height: 200px;
+        margin-bottom: 25px;
+        flex: 350px;
+        cursor: pointer;
+        transition: .25s;
+        box-shadow: rgba(224, 237, 248, .0) 0 0 20px 1px;
+        border-radius: 5px;
+        //background: #f4f7fa;
+        background: #f4f7fa no-repeat center center ;//fixed
+        background-size: cover;
+        @media screen and (max-width: 700px) {
+          flex: 100%;
+          max-width: 100%;
+        }
+        &:nth-child(3), &:nth-child(6){
+          margin-right: 0;
+        }
+        &:hover{
+          transform: scale(1.2);
+          box-shadow: rgba(224, 237, 248, 1) 0 0 20px 1px;
+        }
+      }
+    }
+
+}

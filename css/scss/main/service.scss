@@ -1,0 +1,208 @@
+.service{
+  height: 100vh;
+  box-sizing: border-box;
+  padding-left: 100px;
+  padding-top: 50px;
+  position: relative;
+
+  .title{
+    z-index: 1;
+    h2{
+      font-size: 48px;
+      color: rgba(51, 51, 51, 1.000);
+      position: relative;
+      padding-left: 26px;
+      display: flex;
+      align-items: center;
+      &:before{
+        content: '';
+        position: absolute;
+        width: 10px;
+        height: 58px;
+        background: rgba(158, 125, 49, 1.000);
+        left: 0;
+        top: 0;
+        opacity: .9;
+      }
+    }
+    p{
+      font-size: 18px;
+      line-height: 31px;
+      letter-spacing: -0.5px;
+      color: rgba(136, 136, 136, 1.000);
+      max-width: 435px;
+    }
+  }
+  #bigImg{
+    z-index: 0;
+    position: absolute;
+    right: 0;
+    top: calc(50% - 40%);
+    width: 55%;
+    height: 70%;
+    background: red no-repeat center center ;//fixed
+    background-size: cover;
+    border-radius: 5px;
+
+
+    &:before, &:after{
+      position: absolute;
+      z-index: 1;
+      content: '';
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      background: linear-gradient(359.64deg, #1F1F1F 2.08%, rgba(134, 96, 11, 0.16) 42.13%, rgba(81, 63, 22, 0) 97.66%);
+      mix-blend-mode: normal;
+      opacity: 0.4;
+      border-radius: 5px;
+    }
+    &:after{
+      background: linear-gradient(96.24deg, #A88A47 3.4%, rgba(134, 96, 11, 0.81) 50.26%, rgba(81, 62, 20, 0.7) 96.6%);
+    }
+  }
+  .service-container{
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+    width: 100%;
+    margin-top: 50px;
+    .card{
+      width: 360px;
+      min-width: 360px;
+      height: 160px;
+      margin-right: 32px;
+      background: no-repeat center center ;//fixed
+      background-size: cover;
+      position: relative;
+      //box-shadow: 0px 40px 80px rgba(0, 0, 0, 0.1);
+      box-shadow: 0px 4px 35px rgba(0, 0, 0, 0.16);
+      border-radius: 5px;
+      display: flex;
+      align-items: flex-start;
+      transition: .25s;
+      cursor: pointer;
+
+      &:before{
+        border-radius: 5px;
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        transition: .25s;
+        background: linear-gradient(94.31deg, #A88A47 2.03%, rgba(134, 96, 11, 0.81) 50.27%, rgba(81, 62, 20, 0.7) 97.97%);
+
+      }
+      &:after{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background: linear-gradient(108.2deg, #A88A47 1.47%, #86600B 70.47%, #5E4F2F 138.71%);
+        opacity: 0;
+        transition: .25s;
+        box-shadow: 0px 4px 35px;
+        border-radius: 5px;
+
+      }
+      h3{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 5px 0 0 31px;
+        margin-top: 55px;
+        position: relative;
+        z-index: 1;
+        width: 235px;
+        color: white;
+        line-height: 34px;
+        font-size: 20px;
+        transition: .25s;
+        &:before{
+          transition: .25s;
+          content: '';
+          width: 62px;
+          height: 7px;
+          position: absolute;
+          background: white;
+          opacity: .9;
+          left: 31px;
+          top: -20px;
+        }
+      }
+
+      &:hover:after{
+        opacity: 1;
+      }
+      &:hover{
+      }
+
+    }
+
+    .card-active{
+      &:before{
+        //background: linear-gradient(94.31deg, #A88A47 2.03%, rgba(134, 96, 11, 0.81) 50.27%, rgba(81, 62, 20, 0.7) 97.97%);
+      }
+    }
+  }
+  .service-setting{
+    margin-top: 50px;
+    color: rgba(157, 175, 189, 1.000);
+    i{
+      padding: 13px 14px 13px 14px;
+      //width: 40px;
+      //height: 40px;
+      margin-right: 15px;
+      box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 40px;
+      background: white;
+      cursor: pointer;
+      transition: .25s;
+      position: relative;
+      //overflow: hidden;
+      &:before{
+        margin: 0;
+      }
+      &:hover{
+        color: white;
+        background: rgba(168, 138, 71, 1.000);
+      }
+
+
+      &:nth-child(1){
+        &:after{
+          content: 'Prev';
+          position: absolute;
+          left: -100%;
+          transition: .2s;
+          top:calc(50% - 9px);
+          display: none;
+        }
+      }
+      &:nth-child(2){
+        &:after{
+          content: 'Next';
+          top:calc(50% - 9px);
+          position: absolute;
+          right: -100%;
+          display: none;
+          transition: .2s;
+
+        }
+      }
+      &:hover:after{
+        color: rgba(157, 175, 189, 1.000);
+        display: block;
+      }
+
+
+    }
+  }
+}
