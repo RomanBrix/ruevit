@@ -5,9 +5,14 @@ import $ from "jquery";
 
 export default class Header extends Component {
     scrollTo(id){
-            $('html, body').animate({
-                scrollTop: ($(`#${id}`).offset().top)
-            },900);
+        let time = 900;
+        if(id==="adv"){
+            time = 600;
+        }
+        console.log(id);
+        $('html, body').animate({
+            scrollTop: ($(`#${id}`).offset().top)
+        }, time);
     }
     render() {
         const { contacts } = this.props;
@@ -18,9 +23,9 @@ export default class Header extends Component {
                 </div>
                 <div className="menu">
                     <ul>
-                        <li className={'active'} onClick={()=>{
-                            this.scrollTo('intro')
-                        }}> Главная </li>
+                        {/*<li className={'active'} onClick={()=>{*/}
+                            {/*this.scrollTo('intro')*/}
+                        {/*}}> Главная </li>*/}
 
                         <li onClick={()=>{
                             this.scrollTo('adv')
@@ -35,7 +40,7 @@ export default class Header extends Component {
                         }}>Галерея</li>
 
                         <li onClick={()=>{
-                            // this.scrollTo('intro')
+                            this.scrollTo('news')
                         }}>Новости</li>
 
                         <li onClick={()=>{

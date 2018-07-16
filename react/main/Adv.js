@@ -7,44 +7,66 @@ export default class Adv extends Component {
         this.state = {
             advs: props.advs,
             activeAdvs:0
-        }
+        };
     }
 
     nextBtn(){
         const { advs, activeAdvs } = this.state;
         const allServ = $('.adv-card');
-        console.log(allServ);
+        const widthOfCard = $(allServ[activeAdvs]).outerWidth(true);
+        const screenWidth = getComputedStyle($('.adv-container')[0]).width.slice(0, -2);
+        const maxNext = allServ.length - (Math.floor(screenWidth/widthOfCard));
+        // console.log(screenWidth);
+        // console.log(maxNext);
 
-        if (activeAdvs < advs.length - 1) {
-            const widthOfCard = $(allServ[activeAdvs]).outerWidth(true);
 
-            // $(allServ[activeAdvs]).animate({
-            //     marginLeft: `-${widthOfCard}px`
-            // }, 'fast');
-            $(allServ[activeAdvs]).css({
-                marginLeft: `-${widthOfCard}px`
+        if (activeAdvs < advs.length - 1 && maxNext > activeAdvs) {
+            const firstCard =$(allServ[0])[0].style.marginLeft.slice(1,-2);
+
+            let  marl = 0;
+            if(activeAdvs === 0){
+                marl =   -widthOfCard
+            }else{
+                marl =  -firstCard - widthOfCard
+            }
+
+            $(allServ[0]).css({
+                marginLeft: `${marl}px`
             });
-            // $('#bigImg').css("background-image", `url(/src/advs/${srvs[activeAdvs + 1].img})`)
             this.setState({
                 activeAdvs: activeAdvs + 1
             })
+        }
+
+        if(maxNext <= activeAdvs){
+            // alert('last');
+            $('.adv-setting').toggleClass('shake-element');
+            setTimeout(()=>{
+                $('.adv-setting').toggleClass('shake-element');
+            },500);
         }
     }
 
     prevBtn(){
         const { advs, activeAdvs } = this.state;
         const allServ = $('.adv-card');
+        const widthOfCard = $(allServ[activeAdvs]).outerWidth(true);
+        const firstCard = $(allServ[0])[0].style.marginLeft.slice(1,-2);
+
+        let  marl = 0;
+        if(activeAdvs === 0){
+            marl =   -widthOfCard
+        }else{
+            marl =  -firstCard + widthOfCard
+        }
+        // console.log(marl);
+
 
         if (activeAdvs > 0) {
-            // const widthOfCard = $(allServ[activeAdvs]).outerWidth(true);
 
-            // $(allServ[activeAdvs - 1]).animate({
-            //     marginLeft: `0px`
-            // }, 'fast', 'linear');
-            $(allServ[activeAdvs - 1]).css({
-                marginLeft: `0px`
+            $(allServ[0]).css({
+                marginLeft: `${marl}px`
             });
-            // $('#bigImg').css("background-image", `url(/src/services/${srvs[activeAdvs - 1].img})`)
             this.setState({
                 activeAdvs: activeAdvs - 1
             })
@@ -84,10 +106,10 @@ export default class Adv extends Component {
                     {advsContainter}
                 </div>
                 <div className="adv-setting">
-                    <i className="icon-left-open-big" onClick={()=>{
+                    <i className="icon-left-open-big"  onClick={()=>{
                         this.prevBtn();
                     }}/>
-                    <i className="icon-right-open-big" onClick={()=>{
+                    <i className="icon-right-open-big" id={`we_need_to_stop`} onClick={()=>{
                         this.nextBtn();
                     }}/>
                 </div>

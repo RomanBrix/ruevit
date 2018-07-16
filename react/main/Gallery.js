@@ -6,7 +6,7 @@ export default class Gallery extends Component {
     constructor(props) {
         super(props);
         this.state={
-            imgs: ['src/image3.jpg','src/image2.jpg','src/image3.jpg','src/image2.jpg','src/image3.jpg','src/image2.jpg'],
+            imgs: props.photosToPreview.slice(0,6),
             activePhoto: 0
         }
     }
@@ -14,7 +14,7 @@ export default class Gallery extends Component {
     toggleFullScreenPhoto(src, activePhoto){
         const { imgs } = this.state;
         if(src !== 'close') {
-            $('#f-photo').css('background-image', `url(${src})`);
+            $('#f-photo').css('background-image', `url(src/gallery/${src})`);
             //off btn back when we need this
             if(activePhoto === 0) {
                 if (!($('#arrowThatIneed').hasClass('not-active'))) {
@@ -50,7 +50,7 @@ export default class Gallery extends Component {
         let newUrl = '';
         if(activePhoto + 1 < imgs.length) {
             newUrl = imgs[activePhoto + 1];
-            $('#f-photo').css('background-image', `url(${newUrl})`);
+            $('#f-photo').css('background-image', `url(src/gallery/${newUrl})`);
             if($('#arrowThatIneed').hasClass('not-active')) {
                 $('#arrowThatIneed').removeClass('not-active');
             }
@@ -71,7 +71,7 @@ export default class Gallery extends Component {
         let newUrl = '';
         if(activePhoto  > 0) {
             newUrl = imgs[activePhoto - 1];
-            $('#f-photo').css('background-image', `url(${newUrl})`);
+            $('#f-photo').css('background-image', `url(src/gallery/${newUrl})`);
             if($('#arrowThatIneed2').hasClass('not-active')) {
                 $('#arrowThatIneed2').removeClass('not-active');
             }
@@ -93,7 +93,7 @@ export default class Gallery extends Component {
         const { imgs } = this.state;
         const imgContainer = imgs.map((item, index)=>{
             return (
-                <div className="gallery-img"  style={{backgroundImage: `url(${item})`}}id={`photo-${index}`} key={index} onClick={()=>{
+                <div className="gallery-img"  style={{backgroundImage: `url(src/gallery/${item})`}}id={`photo-${index}`} key={index} onClick={()=>{
                     this.toggleFullScreenPhoto(item, index)
                 }}/>
             )

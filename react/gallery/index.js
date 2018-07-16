@@ -14,7 +14,7 @@ export default class Gallery extends Component {
     toggleFullScreenPhoto(src, activePhoto){
         const { imgs } = this.state;
         if(src !== 'close') {
-            $('#f-photo').css('background-image', `url(${src})`);
+            $('#f-photo').css('background-image', `url(src/gallery/${src})`);
             //off btn back when we need this
             if(activePhoto === 0) {
                 if (!($('#arrowThatIneed').hasClass('not-active'))) {
@@ -50,7 +50,7 @@ export default class Gallery extends Component {
         let newUrl = '';
         if(activePhoto + 1 < imgs.length) {
             newUrl = imgs[activePhoto + 1];
-            $('#f-photo').css('background-image', `url(${newUrl})`);
+            $('#f-photo').css('background-image', `url(src/gallery/${newUrl})`);
             if($('#arrowThatIneed').hasClass('not-active')) {
                 $('#arrowThatIneed').removeClass('not-active');
             }
@@ -71,7 +71,7 @@ export default class Gallery extends Component {
         let newUrl = '';
         if(activePhoto  > 0) {
             newUrl = imgs[activePhoto - 1];
-            $('#f-photo').css('background-image', `url(${newUrl})`);
+            $('#f-photo').css('background-image', `url(src/gallery/${newUrl})`);
             if($('#arrowThatIneed2').hasClass('not-active')) {
                 $('#arrowThatIneed2').removeClass('not-active');
             }
@@ -89,19 +89,19 @@ export default class Gallery extends Component {
     };
 
     render() {
-        // console.log(this.props);
+        console.log(this.props);
         // const { frontRedux } = this.props;
         const { imgs } = this.state;
         const imgContainer = imgs.map((item, index)=>{
             return (
-                <div className="gallery-img"  style={{backgroundImage: `url(${item})`}}id={`photo-${index}`} key={index} onClick={()=>{
+                <div className="gallery-img"  style={{backgroundImage: `url(src/gallery/${item})`}}id={`photo-${index}`} key={index} onClick={()=>{
                     this.toggleFullScreenPhoto(item, index)
                 }}/>
             )
         });
         return (
             <div className="big-gallery">
-                <GHeader/>
+                {/*<GHeader/>*/}
                 <div className="fullScreenPhoto">
                     <div id="f-photo"/>
                     <div className="settings">
@@ -117,7 +117,10 @@ export default class Gallery extends Component {
                     </div>
                 </div>
                 <div className="gallery-head">
-                    <h2>Галерея снимков</h2>
+                    <h2 className={`with-left-stroke`}>Галерея снимков</h2>
+                    <i className='icon-cancel' onClick={()=>{
+                        this.props.history.push('/')
+                    }}/>
                 </div>
                 <div className="gallery-container">
                     { imgContainer }

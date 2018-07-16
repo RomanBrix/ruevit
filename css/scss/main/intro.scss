@@ -16,6 +16,10 @@
     width: 100%;
     display: flex;
     overflow: hidden;
+    .slides{
+      //transition: .95s cubic-bezier(0.61,-0.19, 0.7,-0.11);
+      transition: .35s ease-in-out;
+    }
 
     &:before{
       content: '';
@@ -54,10 +58,12 @@
       }
     }
     .icon-left-open-big{
+      color: rgba(147, 147, 147, 1.000);
       z-index: 2;
       left: 15px;
     }
     .icon-right-open-big{
+      color: rgba(147, 147, 147, 1.000);
       z-index: 2;
       right: 20px;
     }
@@ -154,14 +160,15 @@
     .arrows {
       z-index: 2;
       cursor: pointer;
-      width: 30px;
-      height: 56px;
+      width: 20px;
+      height: 36px;
       position: absolute;
-      left: 50%;
-      margin-left: -30px;
-      bottom: 10px;
+      left: calc(50% - 10px);
+      //margin-left: ;
+      bottom: 20px;
       path {
-        stroke: rgba(157, 175, 189, 1.000);
+        //stroke: rgba(157, 175, 189, 1.000);
+        stroke: rgba(147, 147, 147, 1.000);
         fill: transparent;
         stroke-width: 1px;
         animation: arrow 2s infinite;

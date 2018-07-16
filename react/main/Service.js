@@ -23,7 +23,12 @@ export default class Service extends Component {
         const { srvs, activeServ } = this.state;
         const allServ = $('.card');
 
-        if (activeServ < srvs.length - 1) {
+        const widthOfCard = $(allServ[activeServ]).outerWidth(true);
+        const screenWidth = getComputedStyle($('.service-container')[0]).width.slice(0, -2);
+        const maxNext = allServ.length - (Math.floor(screenWidth/widthOfCard));
+
+
+        if (activeServ < srvs.length - 1 && maxNext > activeServ) {
             const widthOfCard = $(allServ[activeServ]).outerWidth(true);
 
             // $(allServ[activeServ]).animate({
@@ -36,6 +41,13 @@ export default class Service extends Component {
             this.setState({
                 activeServ: activeServ + 1
             })
+        }
+
+        if(maxNext <= activeServ){
+            $('.service-setting').toggleClass('shake-element');
+            setTimeout(()=>{
+                $('.service-setting').toggleClass('shake-element');
+            },500);
         }
     }
 
@@ -59,6 +71,16 @@ export default class Service extends Component {
         }
     }
 
+    onOver(index){
+        const { srvs } = this.state;
+        $('#bigImg').css("background-image", `url(/src/services/${srvs[index].img})`)
+    }
+    onLeave(){
+        const { srvs, activeServ } = this.state;
+        $('#bigImg').css("background-image", `url(/src/services/${srvs[activeServ].img})`)
+
+    }
+
     render() {
         // /src/services/
         const { srvs } = this.state;
@@ -71,6 +93,12 @@ export default class Service extends Component {
                     key={index}
                     onClick={()=>{
                         history.push(`/service/${index}`)
+                    }}
+                    onMouseEnter={()=>{
+                        this.onOver(index);
+                    }}
+                    onMouseLeave={()=>{
+                        this.onLeave();
                     }}
                 >
                     <h3>{item.title}</h3>

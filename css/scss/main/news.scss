@@ -1,0 +1,113 @@
+.news{
+  padding: 80px 100px 80px 100px;
+  .news-head{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 70px;
+    h2{
+      margin: 0;
+    }
+    span{
+      font-weight: normal;
+      line-height: normal;
+      font-size: 24px;
+      letter-spacing: -1px;
+      color: #A88A47;
+      cursor: pointer;
+    }
+  }
+  .news-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    //position: relative;
+    .news-card{
+      transition: .25s;
+      width: 340px;
+      height: 340px;
+      cursor: pointer;
+      padding: 30px;
+      box-sizing: border-box;
+      background: #FFFFFF;
+      /* Other */
+      position: relative;
+      box-shadow: 0px 5px 20px rgba(3, 3, 3, 0.07);
+      border-radius: 6px;
+      .date{
+        position: relative;
+        transition: .25s;
+
+        font-weight: bold;
+        line-height: normal;
+        font-size: 14px;
+        letter-spacing: -0.318182px;
+
+        /* Gray 4 */
+        color: #BDBDBD;
+      }
+      h3{
+        position: relative;
+        transition: .25s;
+        font-weight: 500;
+        line-height: 26px;
+        font-size: 18px;
+        letter-spacing: -0.5px;
+        font-family: 'RobotoMedium';
+        /* Gray 1 */
+        color: #333333;
+      }
+      .desc{
+        position: relative;
+        transition: .25s;
+        font-weight: normal;
+        line-height: 24px;
+        font-size: 14px;
+
+        /* Gray 2 */
+        color: #4F4F4F;
+        p{
+          margin: 12px 0;
+          padding: 0;
+          transition: .25s;
+          color: #4F4F4F;
+        }
+      }
+
+      &:before{
+        box-sizing: border-box;
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transition: .25s;
+        left: 0;
+        top: 0;
+        background: linear-gradient(99.62deg, #A48D5A 6.64%, #9F7820 50.24%, #866621 93.36%);
+        /* Shadow News */
+        box-shadow: 0px 5px 20px rgba(161, 125, 47, 0.4);
+        border-radius: 5px;
+        opacity: .0;
+      }
+      &:hover{
+        color: white !important;
+        .date{
+          color: white
+        }
+        h3{
+          color: white
+        }
+        .desc{
+          color: white;
+          p{
+            color: white
+          }
+        }
+      }
+      &:hover:before{
+        opacity: 1;
+      }
+    }
+  }
+}

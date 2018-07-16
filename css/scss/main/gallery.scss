@@ -66,15 +66,35 @@
     h2{
       font-size: 3em;
       margin-bottom: 0;
+      padding: 0;
+      &:before{
+        display: none;
+      }
+      &:after{
+        position: absolute;
+        content: '';
+        width: 99px;
+        height: 10px;
+        background: #9E7D32;
+        opacity: 0.9;
+        top: -35px;
+        left: 0;
+      }
     }
     .btn{
       cursor: pointer;
-      color: #84b3d1;
+      //color: #84b3d1;
       margin-top: 10px;
+      font-weight: normal;
+      line-height: normal;
+      font-size: 24px;
+      letter-spacing: -1px;
+
+      color: #A88A47;
     }
   }
   .gallery-container{
-    margin: 75px 0;
+    margin: 75px 0 0;
     //background: #000;
     box-sizing: border-box;
     padding: 0 100px;
@@ -97,7 +117,9 @@
       flex: 350px;
       cursor: pointer;
       transition: .25s;
-      box-shadow: rgba(224, 237, 248, .0) 0 0 20px 1px;
+      //box-shadow: rgba(224, 237, 248, .0) 0 0 20px 1px;
+      box-shadow: 0px 5px 20px rgba(3, 3, 3, 0.07);
+
       border-radius: 5px;
       //background: #f4f7fa;
       background: #f4f7fa no-repeat center center ;//fixed
@@ -110,8 +132,10 @@
         margin-right: 0;
       }
       &:hover{
-        transform: scale(1.2);
-        box-shadow: rgba(224, 237, 248, 1) 0 0 20px 1px;
+        transform: scale(1.02);
+        //box-shadow: rgba(224, 237, 248, 1) 0 0 20px 1px;
+        box-shadow: 0px 5px 20px rgba(3, 3, 3, 0.07);
+
       }
     }
   }

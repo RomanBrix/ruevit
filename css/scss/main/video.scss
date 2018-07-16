@@ -54,7 +54,11 @@
       position: absolute;
       left: 0;
       top: 0;
-      background: rgba(0, 0, 0, .45);
+      //background: rgba(0, 0, 0, .45);
+      background: linear-gradient(96.29deg, #A88A47 3.44%, #86600B 50.26%, #513E14 96.56%);
+      opacity: 0.05;
+      box-shadow: 0px 40px 80px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
     }
   }
   .open-video{
@@ -119,7 +123,7 @@
         background: rgba(255, 255, 255, .1);
 
         i{
-          padding:0;
+          padding: 0;
           width: 150px;
           height: 150px;
           //width: 100%;

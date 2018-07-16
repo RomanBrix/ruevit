@@ -7,6 +7,7 @@ import Gallery from "./Gallery";
 import {contacts} from "../URLS";
 import Header from "../layouts/Header";
 import Service from "./Service";
+import News from "./News";
 
 export default class MainPage extends Component {
 
@@ -16,16 +17,15 @@ export default class MainPage extends Component {
     }
     render() {
         const { contacts, history, frontRedux } = this.props;
-        // console.log(frontRedux);
-
         return(
             <div className="main-page">
                 <Header contacts={ contacts.socials } />
-                <Intro/>
+                <Intro slider={frontRedux.slider}/>
                 <Adv advs={frontRedux.advs} history={history} />
                 <Video/>
                 <Service history={history} services={frontRedux.services}/>
-                <Gallery history={history}/>
+                <Gallery history={history} photosToPreview={frontRedux.photosToAlbum}/>
+                <News history={history} news={frontRedux.news}/>
                 <Contact contacts={contacts} />
             </div>
         )

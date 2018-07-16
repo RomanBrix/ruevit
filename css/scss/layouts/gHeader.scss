@@ -1,11 +1,12 @@
 .gHeader{
-  position: static ;
+  position: relative ;
   display: flex;
   align-items: center;
   justify-content: space-between;
   //background: rgba(109, 129, 140, 1);
-  border-bottom: 2px solid dodgerblue;
+  border-bottom: 2px solid white;
   box-shadow: rgba(37, 50, 56, .1) 0 10px 25px 1px;
+  z-index: 3;
   .menu{
     width: 50%;
     display: flex;
@@ -23,10 +24,15 @@
         transition: .25s;
         a{
           text-decoration: none;
-          color: inherit;
+          color: white;
+          transition: .25s;
         }
         &:hover{
-          color: rgba(254, 196, 22, 1.000);
+          //color: rgba(254, 196, 22, 1.000);
+          a{
+            color: rgba(158, 125, 49, 1.000);
+
+          }
         }
       }
     }
@@ -45,13 +51,15 @@
           cursor: pointer;
           transform: scale(1.2);
           i {
-            color: #026fc2;
+            //color: #026fc2;
+            color: rgba(158, 125, 49, 1.000);
+
           }
         }
         i {
-          background: #9dafbd;
-          color: white;
-          padding: 7px;
+          background: white;
+          color: black;
+          padding: 7px 9px;
           border-radius: 50%;
           transition: .25s;
 

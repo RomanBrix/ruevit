@@ -4,6 +4,7 @@
   padding-left: 100px;
   padding-top: 50px;
   position: relative;
+  overflow: hidden;
 
   .title{
 
@@ -41,7 +42,7 @@
     top: calc(50% - 40%);
     width: 55%;
     height: 70%;
-    background: red no-repeat center center ;//fixed
+    background: white no-repeat center center ;//fixed
     background-size: cover;
     border-radius: 5px;
 
@@ -71,8 +72,10 @@
     justify-content: flex-start;
     overflow: hidden;
     //overflow-x: auto;
-    width: 100%;
+    width: calc(100% + 100px);
     margin-top: 50px;
+    margin-left: -100px;
+    padding: 0 0 0 100px;
     //-webkit-overflow-scrolling: touch;
     //flex-wrap: nowrap;
     //overflow-x: auto;
@@ -85,12 +88,14 @@
       background-size: cover;
       position: relative;
       //box-shadow: 0px 40px 80px rgba(0, 0, 0, 0.1);
-      box-shadow: 0px 4px 35px rgba(0, 0, 0, 0.16);
+      //box-shadow: 0px 4px 35px rgba(0, 0, 0, 0.16);
+      box-shadow: 0px 5px 20px rgba(3, 3, 3, 0.07);
+
       border-radius: 5px;
       display: flex;
       align-items: flex-start;
-      //transition: .55s;
-      transition: 0.4s cubic-bezier(0.61,-0.19, 0.7,-0.11);
+      transition: .25s;
+      //transition: 0.4s cubic-bezier(0.61,-0.19, 0.7,-0.11);
       cursor: pointer;
 
       &:before{

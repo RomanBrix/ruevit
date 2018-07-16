@@ -3,7 +3,8 @@ import { front } from "../actionsAndUrl";
 
 const InitialState = Immutable.fromJS({
     request: false,
-    photosToAlbum: ['src/image3.jpg','src/image2.jpg','src/image3.jpg','src/image2.jpg','src/image3.jpg','src/image2.jpg','src/image3.jpg','src/image2.jpg','src/image3.jpg','src/image2.jpg','src/image3.jpg','src/image2.jpg','src/image3.jpg','src/image2.jpg','src/image3.jpg','src/image2.jpg','src/image3.jpg','src/image2.jpg','src/image3.jpg','src/image2.jpg','src/image3.jpg','src/image2.jpg','src/image3.jpg','src/image2.jpg','src/image3.jpg','src/image2.jpg','src/image3.jpg','src/image2.jpg','src/image3.jpg','src/image2.jpg','src/image3.jpg','src/image2.jpg','src/image3.jpg','src/image2.jpg','src/image3.jpg','src/image2.jpg','src/image3.jpg','src/image2.jpg','src/image3.jpg','src/image2.jpg','src/image3.jpg','src/image2.jpg'],
+    photosToAlbum: ['image.png','ph1.png','ph3.png','ph2.png','ph3.png','image.png','ph1.png','ph3.png','ph2.png','image.png','ph1.png','ph3.png','ph2.png','image.png','ph1.png','ph3.png','ph2.png','image.png','ph1.png','ph3.png','ph2.png','image.png','ph1.png','ph3.png','ph2.png','image.png','ph1.png','ph3.png','ph2.png','image.png','ph1.png','ph3.png','ph2.png'],
+    slider: ['ph1-min.png','ph2-min.png','ph3-min.png'],
     services: [
         {
             title: 'Физическая охрана обьектов',
@@ -15,7 +16,7 @@ const InitialState = Immutable.fromJS({
         },
         {
             title: 'Оружие',
-            img: 'image.png'
+            img: 'image3.png'
         },
         {
             title: 'Физическая охрана обьектов',
@@ -35,23 +36,43 @@ const InitialState = Immutable.fromJS({
         {
             title: 'Headline',
             desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem enim excepturi odio, reiciendis saepe excepturi odio, reiciendis saepe sit. Delectus facere iste maiores placeat provident soluta ullam ut voluptatem?',
-            img: 'image.png'
+            img: 'ph1.png'
+        },
+        {
+            title: 'Headline',
+            desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem enim excepturi odio, reiciendis saepe sit. Delectus facere iste maiores placeat provident soluta ullam ut voluptatem?',
+            img: 'ph2.png'
+        },
+        {
+            title: 'Headline',
+            desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem enim excepturi odio, reiciendis saepe sit. Delectus facere iste maiores placeat provident soluta ullam ut voluptatem?',
+            img: 'ph3.png'
         },
         {
             title: 'Headline',
             desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem enim excepturi odio, reiciendis saepe sit. Delectus facere iste maiores placeat provident soluta ullam ut voluptatem?',
             img: 'image.png'
         },
+    ],
+    news: [
         {
-            title: 'Headline',
-            desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem enim excepturi odio, reiciendis saepe sit. Delectus facere iste maiores placeat provident soluta ullam ut voluptatem?',
-            img: 'image.png'
+            id: 0,
+            date: 'march 14th, 2019',
+            title: 'Брошенная Англия создает истребитель будущего',
+            desc: `Великобританию исключили из проекта франко-германского истребителя, что толкнуло Лондон на поиск новых союзников…@%&%@Великобританию исключили из проекта франко-германского истребителя`
         },
         {
-            title: 'Headline',
-            desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem enim excepturi odio, reiciendis saepe sit. Delectus facere iste maiores placeat provident soluta ullam ut voluptatem?',
-            img: 'image.png'
+            id: 1,
+            date: 'march 14th, 2019',
+            title: 'Брошенная Англия создает истребитель будущего',
+            desc: `Великобританию исключили из проекта франко-германского истребителя, что толкнуло Лондон на поиск новых союзников…@%&%@Великобританию исключили из проекта франко-германского истребителя`
         },
+        {
+            id: 2,
+            date: 'march 14th, 2019',
+            title: 'Брошенная Англия создает истребитель будущего',
+            desc: `Великобританию исключили из проекта франко-германского истребителя, что толкнуло Лондон на поиск новых союзников…@%&%@Великобританию исключили из проекта франко-германского истребителя`
+        }
     ]
 });
 
