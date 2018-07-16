@@ -1,0 +1,55 @@
+.video {
+  flex-direction: column;
+  //min-height: 100vh;
+  height: auto;
+  justify-content: flex-start;
+  #video-layer-on {
+    i {
+      &:hover {
+
+      }
+    }
+    iframe {
+    }
+  }
+  #bg-for-video {
+    width: 100%;
+    position: static;
+    height: 400px;
+    &:before {
+    }
+  }
+  .open-video {
+    position: absolute;
+    top: calc(200px - 75px);
+    .video-play {
+      i {
+        &:before {
+        }
+        &::after {
+        }
+      }
+
+      &:hover {
+        i {
+        }
+      }
+    }
+  }
+
+  .video-preview {
+    width: 100%;
+    padding: 25px 20px 25px 25px;
+    h2 {
+      font-size: 27px;
+      &:before {
+        top: -23px;
+      }
+    }
+    p {
+      font-size: 15px;
+    }
+    img {
+    }
+  }
+}

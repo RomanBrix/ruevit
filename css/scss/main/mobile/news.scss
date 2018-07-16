@@ -1,0 +1,56 @@
+.news{
+  padding: 80px 15px 80px 15px;
+  .news-head{
+    align-items: center;
+    justify-content: center;
+    h2{
+      font-size: 31px;
+      margin-bottom: 20px;
+      &:before{
+        height: 100%;
+      }
+    }
+    span{
+    }
+  }
+  .news-container{
+    align-items: center;
+    justify-content: center;
+    .news-card {
+      margin-bottom: 20px;
+      &:before {
+        opacity: 1;
+      }
+
+      .date {
+        color: white;
+
+      }
+      h3 {
+        color: white;
+      }
+      .desc {
+        color: white;
+
+        p {
+          color: white;
+        }
+      }
+    }
+      &:before{
+        opacity: 1;
+      }
+      &:hover{
+        .date{
+        }
+        h3{
+        }
+        .desc{
+          p{
+          }
+        }
+      }
+      &:hover:before{
+      }
+    }
+  }

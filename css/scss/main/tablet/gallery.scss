@@ -1,0 +1,43 @@
+.gallery{
+  .fullScreenPhoto{
+    #f-photo{
+    }
+    .settings{
+      .icon-left-open-big, .icon-right-open-big{
+        &:hover{
+        }
+      }
+      .not-active{
+        &:hover{
+        }
+      }
+      .icon-cancel{
+        &:hover{
+        }
+      }
+    }
+  }
+  .gallery-head{
+
+    h2{
+      margin-bottom: 15px;
+      flex: 100%;
+      max-width: 100%;
+      &:before{
+      }
+      &:after{
+        top: -20px;
+      }
+    }
+    .btn{
+    }
+  }
+  .gallery-container{
+    .gallery-img{
+      flex: 100%;
+      max-width: 100%;
+      &:nth-child(3), &:nth-child(6){
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+.news{
+  .news-head{
+    h2{
+      margin-bottom: 20px;
+    }
+    span{
+    }
+  }
+  .news-container{
+    align-items: center;
+    justify-content: center;
+    .news-card {
+      margin-bottom: 20px;
+      &:before {
+        opacity: 1;
+      }
+
+      .date {
+        color: white;
+
+      }
+      h3 {
+        color: white;
+      }
+      .desc {
+        color: white;
+
+        p {
+          color: white;
+        }
+      }
+    }
+      &:before{
+        opacity: 1;
+      }
+      &:hover{
+        .date{
+        }
+        h3{
+        }
+        .desc{
+          p{
+          }
+        }
+      }
+      &:hover:before{
+      }
+    }
+  }

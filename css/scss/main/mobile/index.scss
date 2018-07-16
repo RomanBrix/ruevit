@@ -1,7 +1,4 @@
-.main-page{
-  h2{
-    font-weight: 100;
-  }
+@media  (max-width:481px) {
   @import "intro";
   @import "adv";
   @import "video";
@@ -9,10 +6,4 @@
   @import "gallery";
   @import "news";
   @import "contact";
-
-
-  //tablet
-  @import "./tablet/index";
-  @import "./mobile/index";
-
 }

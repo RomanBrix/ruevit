@@ -23,9 +23,14 @@
     align-items: center;
     justify-content: space-between;
     //position: relative;
+    @media  (max-width:1156px) {
+      flex-wrap: wrap;
+    }
+
     .news-card{
       transition: .25s;
       width: 340px;
+      min-width: 340px;
       height: 340px;
       cursor: pointer;
       padding: 30px;

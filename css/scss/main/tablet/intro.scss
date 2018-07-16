@@ -1,0 +1,42 @@
+
+  .intro{
+    .slider{
+      .slides{}
+
+      &:before{}
+      &:after {}
+
+
+      .icon-left-open-big, .icon-right-open-big{
+
+        &:hover{}
+      }
+      .icon-left-open-big{}
+      .icon-right-open-big{}
+      div {}
+      img{}
+    }
+    .settings{
+      .set{
+        &:hover{}
+      }
+      .set-active{}
+    }
+    .intro-text{
+      padding-bottom: 25px;
+      h1{
+        //font-size: .9em
+        font-size: 37px;
+      }
+      p{}
+      .btn{}
+    }
+    //.down{
+    .arrows {
+      path {
+        &.a1 {}
+        &.a2 {}
+        &.a3 {}
+      }
+    }
+  }

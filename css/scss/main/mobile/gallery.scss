@@ -1,0 +1,55 @@
+.gallery{
+  .fullScreenPhoto{
+    #f-photo{
+    }
+    .settings{
+      .icon-left-open-big, .icon-right-open-big{
+        &:hover{
+        }
+      }
+      .not-active{
+        &:hover{
+        }
+      }
+      .icon-cancel{
+        &:hover{
+        }
+      }
+    }
+  }
+  .gallery-head{
+    margin: 0;
+    padding: 0 20px;
+    align-items: center;
+    justify-content: center;
+    h2{
+      margin-bottom: 10px;
+      flex: 100%;
+      font-size: 27px;
+      padding-top: 15px;
+      align-items: center;
+      justify-content: center;
+      max-width: 100%;
+      //text-align: center;
+      &:before{
+      }
+      &:after{
+        top: -10px;
+        left: calc(50% - 50px);
+      }
+    }
+    .btn{
+      margin-top: 0;
+    }
+  }
+  .gallery-container{
+    padding: 0 20px;
+    margin-top: 45px;
+    .gallery-img{
+      flex: 100%;
+      max-width: 100%;
+      &:nth-child(3), &:nth-child(6){
+      }
+    }
+  }
+}
