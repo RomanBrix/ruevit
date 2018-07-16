@@ -8,7 +8,8 @@
 
 
       .icon-left-open-big, .icon-right-open-big{
-
+        font-size: 1.5em;
+        top: calc(40% - 11px);
         &:hover{}
       }
       .icon-left-open-big{}
