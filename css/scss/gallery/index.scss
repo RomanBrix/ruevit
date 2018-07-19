@@ -3,18 +3,30 @@
   //background: rgba(0, 0, 0, .5);
   position: relative;
   overflow: hidden;
-  background: rgba(53, 53, 53, 1.000);
-  //&:before{
-  //  content: '';
-  //  position: absolute;
-  //  width: 110%;
-  //  height: 110%;
-  //  background: inherit;
-  //  left: -50px;
-  //  top: -50px;
-  //  filter: blur(10px);
-  //  box-shadow: inset 0 0 0 500px rgba(77, 77, 77, 0.3);
-  //}
+  //background: ;
+  //background-image: url("./bg.jpg");
+  //background-position: ;
+  //background-repeat: repeat;
+  //filter: grayscale(100%);
+  background: rgba(53, 53, 53, 1.000) round center center fixed;//
+  background-size: 250px 250px;
+  //background: rgba(53, 53, 53, 1.000) no-repeat center center ;//
+  //background-size: 40%;
+  //background-size: cover;
+  min-height: 100vh;
+  &:before{
+    z-index: 0;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .5);
+    //background: inherit;
+    //left: -50px;
+    //top: -50px;
+    //filter: blur(10px);
+    //box-shadow: inset 0 0 0 500px rgba(77, 77, 77, 0.3);
+  }
   .fullScreenPhoto{
       position: fixed;
       top: 0;
@@ -86,11 +98,20 @@
           background: white;
         }
       }
-      .icon-cancel{
+      i{
         cursor: pointer;
         color: white;
         //margin-top: 10px;
+        position: absolute;
+        left: -65px;
         font-size: 3em;
+        transition: .25s;
+        &:before{
+          margin: 0;
+        }
+        &:hover{
+          color: rgba(158, 125, 49, 1.000);
+        }
       }
     }
     .gallery-container{
@@ -103,9 +124,10 @@
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
-      height: 80%;
+      //height: 80%;
       align-items: center;
       align-content: center;
+      width: 100%;
       @media screen and (max-width: 700px) {
         padding: 0 50px;
 
@@ -140,6 +162,151 @@
 
         }
       }
-    }
 
+      .albom-card{
+        margin-bottom: 20px;
+        box-shadow: 0px 5px 25px rgba(3, 3, 3, 0.2);
+        width: 30%;
+        min-width: 30%;
+        height: 200px;
+        border-radius: 5px;
+        position: relative;
+        background: transparent no-repeat center center ;//fixed
+        background-size: cover;
+        transition: .25s;
+        cursor: pointer;
+        overflow: hidden;
+
+        .title{
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          //text-align: center;
+          font-size: 26px;
+          //color: white;
+          transition: .25s;
+          z-index: 2;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          font-weight: 900;
+          line-height: normal;
+          //font-size: 56px;
+          letter-spacing: -.5px;
+          word-spacing: 5px;
+
+          color: #FFFFFF;
+          text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.49);
+        }
+
+        &:before{
+          border-radius: 5px;
+
+          z-index: 1;
+          content: '';
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          left: 0;
+          top: 0;
+          transition: .25s;
+          background: rgba(0, 0, 0, .4);
+        }
+
+        &:hover{
+          transform: scale(1.05);
+          .title{
+            top: -100%;
+          }
+        }
+        &:hover:before {
+          background: rgba(0, 0, 0, .1);
+        }
+      }
+    }
+  @media  (max-width:481px) {
+
+    .fullScreenPhoto{
+      #f-photo{
+      }
+      .settings{
+        .icon-left-open-big, .icon-right-open-big{
+          &:hover{
+          }
+        }
+        .not-active{
+          &:hover{
+          }
+        }
+        .icon-cancel{
+          &:hover{
+          }
+        }
+      }
+    }
+    .gallery-head{
+      margin: 0;
+      padding: 0 20px;
+      align-items: flex-start;
+      justify-content: flex-start;
+      h2{
+        margin-bottom: 10px;
+        //flex: 100%;
+        font-size: 27px;
+        padding-top: 15px;
+        align-items: center;
+        justify-content: center;
+        max-width: 100%;
+        margin-left: 50px;
+        //text-align: center;
+        &:before{
+        }
+        &:after{
+          top: -10px;
+          left: calc(50% - 50px);
+        }
+      }
+      i{
+        left: 10px;
+        top: calc(50% - 15px);
+        &:before{
+        }
+        &:hover{
+        }
+      }
+    }
+    .gallery-container{
+      padding: 0 20px;
+      margin-top: 45px;
+      .gallery-img{
+        flex: 100%;
+        max-width: 100%;
+        &:nth-child(3), &:nth-child(6){
+        }
+        &:hover{
+
+        }
+      }
+
+      .albom-card{
+        flex: 100%;
+        max-width: 100%;
+        .title{
+        }
+
+        &:before{
+        }
+
+        &:hover{
+          .title{
+          }
+        }
+        &:hover:before {
+        }
+      }
+    }
+  }
 }

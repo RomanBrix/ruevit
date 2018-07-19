@@ -1,0 +1,39 @@
+.news{
+  .news-head{
+    h2{
+      &:before{
+      }
+    }
+    span{
+    }
+  }
+  .news-container{
+    .news-card {
+      &:before {
+      }
+
+      .date {
+      }
+      h3 {
+      }
+      .desc {
+        p {
+        }
+      }
+    }
+      &:before{
+      }
+      &:hover{
+        .date{
+        }
+        h3{
+        }
+        .desc{
+          p{
+          }
+        }
+      }
+      &:hover:before{
+      }
+    }
+  }

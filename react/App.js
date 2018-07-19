@@ -12,6 +12,8 @@ import Gallery from "./gallery";
 import News from "./news";
 import Loader from "./layouts/Loader";
 import NewsArticle from "./news/NewsArticle";
+import Albums from "./gallery/Albums";
+import About from "./about";
 
 export default class App extends Component {
     constructor(props){
@@ -40,9 +42,14 @@ export default class App extends Component {
                     {/*<Loader/>*/}
                     <Switch>
                         <Route exact path="/" render={(props)=><MainPage frontRedux={frontRedux} contacts={contacts} {...props}/>}/>
+                        <Route exact path="/about" render={(props)=><About frontRedux={frontRedux} contacts={contacts} {...props}/>}/>
+
                         <Route path="/adv/:position" render={(props)=><Adv frontRedux={frontRedux} {...props}/>}/>
                         <Route path="/service/:position" render={(props)=><Service frontRedux={frontRedux} {...props}/>}/>
-                        <Route path="/gallery" render={(props)=><Gallery frontRedux={frontRedux} {...props}/>}/>
+                        <Switch>
+                            <Route exact path="/gallery" render={(props)=><Albums frontRedux={frontRedux} {...props}/>}/>
+                            <Route path="/gallery/:id-:pos" render={(props)=><Gallery frontRedux={frontRedux} {...props}/>}/>
+                        </Switch>
                         <Switch>
                             <Route exact path="/news" render={(props)=><News frontRedux={frontRedux} {...props}/>}/>
                             <Route path="/news/:id" render={(props)=><NewsArticle frontRedux={frontRedux} {...props}/>}/>

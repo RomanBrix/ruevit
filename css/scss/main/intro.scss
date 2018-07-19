@@ -1,5 +1,5 @@
 .intro{
-  height: 100vh;
+  height: 80vh;
   background: #f4f7fa;
   position: relative;
   display: flex;
@@ -47,7 +47,8 @@
     .icon-left-open-big, .icon-right-open-big{
       position: absolute;
       //color: rgba(152, 172, 187, 1.000);
-      color: rgba(88, 96, 101, 1.000);
+      //color: rgba(158, 125, 49, 1.000);
+      color: rgba(156, 175, 189, 1.000);
       font-size: 1.2em;
       top: calc(50% - 11px);
       cursor: pointer;
@@ -58,12 +59,12 @@
       }
     }
     .icon-left-open-big{
-      color: rgba(147, 147, 147, 1.000);
+      //color: rgba(147, 147, 147, 1.000);
       z-index: 2;
       left: 15px;
     }
     .icon-right-open-big{
-      color: rgba(147, 147, 147, 1.000);
+      //color: rgba(147, 147, 147, 1.000);
       z-index: 2;
       right: 20px;
     }
@@ -73,14 +74,14 @@
       background-size: cover;
       min-width: 100%;
       width: 100%;
-      height: 100vh;
+      height: 80vh;
     }
     img{
       filter: opacity(.1);
       width: 100%;
       padding: 0;
       margin: 0;
-      height: 100vh;
+      height: 80vh;
     }
   }
   .settings{
@@ -108,7 +109,7 @@
   }
   .intro-text{
     z-index: 2;
-    height: 100vh;
+    height: 80vh;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -116,10 +117,10 @@
     margin-left: 100px;
     width: 60%;
     justify-content: flex-end;
-    padding-bottom: 100px;
+    padding-bottom: 40px;
     h1{
       //font-size: 76px;
-      font-size: 56px;
+      font-size: 53px;
       letter-spacing: -1px;
       font-weight: 900;
       text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.49);
@@ -135,7 +136,7 @@
       line-height: 31px;
       font-size: 18px;
       letter-spacing: -0.5px;
-      margin: 30px 0;
+      margin: 20px 0;
       padding: 0;
     }
     .btn{
@@ -168,7 +169,7 @@
       bottom: 20px;
       path {
         //stroke: rgba(157, 175, 189, 1.000);
-        stroke: rgba(147, 147, 147, 1.000);
+        stroke: rgba(156, 175, 189, 1.000);
         fill: transparent;
         stroke-width: 1px;
         animation: arrow 2s infinite;

@@ -9,25 +9,25 @@ html, body{
 
   }
 body{
-  @media  (min-width:1500px) {
-  //  //max-width: 1280px;
-    display: flex;
-  //  //flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
+//  @media  (min-width:1500px) {
+//  //  //max-width: 1280px;
+//    display: flex;
+//  //  //flex-direction: column;
+//    align-items: center;
+//    justify-content: center;
+//  }
 }
 .stop-body{
   overflow: hidden;
 }
 #mountNode{
-  @media  (min-width:1500px) {
-    max-width: 1500px;
+  //@media  (min-width:1500px) {
+  //  max-width: 1500px;
     //display: flex;
     //flex-direction: column;
     //align-items: center;
     //justify-content: center;
-  }
+  //}
   .RenderRouter{
     color: #9dafbd;
     h1,h2 {
@@ -57,6 +57,7 @@ body{
     @import "layouts/Header";
     @import "main/index";
     @import "gallery/index";
+    @import "about/index";
 
 
     .shake-element{

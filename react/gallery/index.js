@@ -5,8 +5,21 @@ import $ from "jquery";
 export default class Gallery extends Component {
     constructor(props) {
         super(props);
+        const { match } = props;
+        const alb_id = match.params.id;
+        const img = props.frontRedux.photosToAlbum;
+        let imgsFromAlbum = [];
+        console.log(props);
+        console.log(img);
+        for (let i = 0; i < img.length; i++) {
+            // console.log(img[i].alb_id );
+            // console.log(imgs[i].alb_id );
+            if(img[i].alb_id == alb_id){
+                imgsFromAlbum.push(img[i]);
+            }
+        }
         this.state={
-            imgs: props.frontRedux.photosToAlbum,
+            imgs: imgsFromAlbum,
             activePhoto: 0
         }
     }
@@ -14,7 +27,7 @@ export default class Gallery extends Component {
     toggleFullScreenPhoto(src, activePhoto){
         const { imgs } = this.state;
         if(src !== 'close') {
-            $('#f-photo').css('background-image', `url(src/gallery/${src})`);
+            $('#f-photo').css('background-image', `url(/src/gallery/${src})`);
             //off btn back when we need this
             if(activePhoto === 0) {
                 if (!($('#arrowThatIneed').hasClass('not-active'))) {
@@ -49,8 +62,8 @@ export default class Gallery extends Component {
         const { imgs, activePhoto } = this.state;
         let newUrl = '';
         if(activePhoto + 1 < imgs.length) {
-            newUrl = imgs[activePhoto + 1];
-            $('#f-photo').css('background-image', `url(src/gallery/${newUrl})`);
+            newUrl = imgs[activePhoto + 1].name;
+            $('#f-photo').css('background-image', `url(/src/gallery/${newUrl})`);
             if($('#arrowThatIneed').hasClass('not-active')) {
                 $('#arrowThatIneed').removeClass('not-active');
             }
@@ -70,8 +83,8 @@ export default class Gallery extends Component {
         const { imgs, activePhoto } = this.state;
         let newUrl = '';
         if(activePhoto  > 0) {
-            newUrl = imgs[activePhoto - 1];
-            $('#f-photo').css('background-image', `url(src/gallery/${newUrl})`);
+            newUrl = imgs[activePhoto - 1].name;
+            $('#f-photo').css('background-image', `url(/src/gallery/${newUrl})`);
             if($('#arrowThatIneed2').hasClass('not-active')) {
                 $('#arrowThatIneed2').removeClass('not-active');
             }
@@ -89,18 +102,34 @@ export default class Gallery extends Component {
     };
 
     render() {
-        console.log(this.props);
+        // console.log(this.props);
         // const { frontRedux } = this.props;
         const { imgs } = this.state;
+        const { albums } = this.props.frontRedux;
+        const { match } = this.props;
+        // const alb_id = match.params.id;
+        //
+        // let imgsFromAlbum = [];
+        // for (let i = 0; i < imgs.length; i++) {
+        //     console.log(imgs[i].alb_id );
+        //     // console.log(imgs[i].alb_id );
+        //     if(imgs[i].alb_id == alb_id){
+        //         imgsFromAlbum.push(imgs[i]);
+        //     }
+        // }
+        // console.log(imgsFromAlbum);
+        // console.log(match.params);
         const imgContainer = imgs.map((item, index)=>{
             return (
-                <div className="gallery-img"  style={{backgroundImage: `url(src/gallery/${item})`}}id={`photo-${index}`} key={index} onClick={()=>{
-                    this.toggleFullScreenPhoto(item, index)
+                <div className="gallery-img"  style={{backgroundImage: `url(/src/gallery/${item.name})`}}id={`photo-${index}`} key={item.id} onClick={()=>{
+                    this.toggleFullScreenPhoto(item.name, index)
                 }}/>
             )
         });
         return (
-            <div className="big-gallery">
+            <div className="big-gallery" style={{
+                backgroundImage: `url(/src/logo.svg)`,
+            }}>
                 {/*<GHeader/>*/}
                 <div className="fullScreenPhoto">
                     <div id="f-photo"/>
@@ -117,9 +146,9 @@ export default class Gallery extends Component {
                     </div>
                 </div>
                 <div className="gallery-head">
-                    <h2 className={`with-left-stroke`}>Галерея снимков</h2>
-                    <i className='icon-cancel' onClick={()=>{
-                        this.props.history.push('/')
+                    <h2 className={`with-left-stroke`}>{albums[match.params.pos].name}</h2>
+                    <i className='icon-angle-circled-left' onClick={()=>{
+                        this.props.history.push('/gallery')
                     }}/>
                 </div>
                 <div className="gallery-container">

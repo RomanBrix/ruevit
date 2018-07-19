@@ -19,7 +19,7 @@ export default class MainPage extends Component {
         const { contacts, history, frontRedux } = this.props;
         return(
             <div className="main-page">
-                <Header contacts={ contacts.socials } />
+                <Header contacts={ contacts.socials }  history={history}/>
                 <Intro slider={frontRedux.slider}/>
                 <Adv advs={frontRedux.advs} history={history} />
                 <Video/>

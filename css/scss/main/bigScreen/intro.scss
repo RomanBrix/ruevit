@@ -8,38 +8,38 @@
 
 
       .icon-left-open-big, .icon-right-open-big{
-        font-size: 1.5em;
-        top: calc(40% - 11px);
+        font-size: 2em;
         &:hover{}
       }
-      .icon-left-open-big{
-        z-index: 20;
-      }
-      .icon-right-open-big{
-        z-index: 20;
-      }
+      .icon-left-open-big{}
+      .icon-right-open-big{}
       div {}
       img{}
     }
     .settings{
       .set{
+        width: 15px;
+        height: 15px;
         &:hover{}
       }
       .set-active{}
     }
     .intro-text{
-      padding-bottom: 25px;
-      margin-left: 20px;
-      width: 90%;
       h1{
-        //font-size: .9em
-        font-size: 27px;
+        font-size: 75px;
       }
-      p{}
-      .btn{}
+      p{
+        font-size: 22px;
+      }
+      .btn{
+        width: 180px;
+        height: 65px;
+        font-size: 22px;
+      }
     }
     //.down{
     .arrows {
+      transform: scale(1.3);
       path {
         &.a1 {}
         &.a2 {}

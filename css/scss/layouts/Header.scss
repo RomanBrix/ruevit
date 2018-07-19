@@ -156,4 +156,17 @@
       }
     }
   }
-}
+  @media (min-width: 1301px) and (max-width: 1921px) {
+    .menu{
+      font-size: 22px;
+    }
+    .logo{
+      img{
+        height: 200px;
+      }
+    }
+    .socials{
+      font-size: 22px;
+    }
+  }
+  }

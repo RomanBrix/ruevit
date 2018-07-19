@@ -128,7 +128,7 @@ export default class Intro extends Component {
                 <div className="intro-text">
                     <h1>Безопасность в любой ситуации.</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem corporis dolorem ea eum omnis possimus quod reiciendis rerum sunt voluptas?</p>
-                    <div className="btn">Get Started</div>
+                    <div className="btn">Заказать звонок</div>
                 </div>
                     <svg className="arrows" onClick={()=>{
                         $('html, body').animate({

@@ -1,0 +1,83 @@
+.service{
+  min-height: 100vh;
+  height: auto;
+  padding: 60px 0 0px 100px;
+  margin-bottom: 70px;
+  .title{
+    &:before{
+    }
+    h2{
+      height: 60px;
+      &:before{
+        height: 100%;
+      }
+    }
+    p{
+      font-size: 22px;
+      line-height: 32px;
+      letter-spacing: -0.2px;
+      max-width: 500px;
+    }
+  }
+  #bigImg{
+    height: 75%;
+    &:before, &:after{
+    }
+    &:after{
+    }
+  }
+  .service-container{
+    .card{
+      width: 440px;
+      min-width: 440px;
+      height: 220px;
+
+      &:before{
+
+      }
+      &:after{
+      }
+      h3{
+        width: 260px;
+        color: white;
+        font-size: 28px;
+        margin-top: 75px;
+        &:before{
+        }
+      }
+
+      &:hover:after{
+      }
+      &:hover{
+      }
+
+    }
+
+    .card-active{
+      &:before{
+      }
+    }
+  }
+  .service-setting{
+    i{
+      &:before{
+      }
+      &:hover{
+        //color: white;
+      }
+
+
+      &:nth-child(1){
+        &:after{
+        }
+      }
+      &:nth-child(2){
+        &:after{
+        }
+      }
+      &:hover:after{
+      }
+
+    }
+  }
+}

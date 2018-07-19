@@ -15,7 +15,9 @@ export default class Header extends Component {
         }, time);
     }
     render() {
-        const { contacts } = this.props;
+        const { contacts, history } = this.props;
+
+        console.log(this.props);
         return (
             <div className="header">
                 <div className="logo">
@@ -28,7 +30,8 @@ export default class Header extends Component {
                         {/*}}> Главная </li>*/}
 
                         <li onClick={()=>{
-                            this.scrollTo('adv')
+                            // this.scrollTo('adv')
+                            history.push('/about');
                         }}>О нас</li>
 
                         <li onClick={()=>{

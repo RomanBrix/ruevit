@@ -109,20 +109,26 @@ export default class Service extends Component {
             <div className="service" id={`service`}>
                 <div className="title">
                     <h2 className={`with-left-stroke`}>Наши Услуги</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, inventore nisi. Amet eligendi et modi quibusdam sequi? Accusamus at cupiditate delectus dolore eveniet, illo, molestias nemo quae quibusdam soluta vitae!</p>
+                    {/*<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, inventore nisi. Amet eligendi et modi quibusdam sequi? Accusamus at cupiditate delectus dolore eveniet, illo, molestias nemo quae quibusdam soluta vitae!</p>*/}
                 </div>
                 <div id="bigImg" style={{backgroundImage: `url(/src/services/${srvs[0].img})`}}/>
                 <div className="service-container">
-                    {servContainer}
+                    <div className="top">
+                        {servContainer.slice(0,3)}
+                    </div>
+                    <div className="bottom">
+                        {servContainer.slice(3,6)}
+
+                    </div>
                 </div>
-                <div className="service-setting">
-                    <i className="icon-left-open-big" onClick={()=>{
-                        this.prevBtn();
-                    }}/>
-                    <i className="icon-right-open-big" onClick={()=>{
-                        this.nextBtn();
-                    }}/>
-                </div>
+                {/*<div className="service-setting">*/}
+                    {/*<i className="icon-left-open-big" onClick={()=>{*/}
+                        {/*this.prevBtn();*/}
+                    {/*}}/>*/}
+                    {/*<i className="icon-right-open-big" onClick={()=>{*/}
+                        {/*this.nextBtn();*/}
+                    {/*}}/>*/}
+                {/*</div>*/}
             </div>
         )
     }

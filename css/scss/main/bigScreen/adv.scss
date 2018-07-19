@@ -1,0 +1,57 @@
+#adv{
+  min-height: auto;
+  .adv-intro{
+    h2{
+      &:before{
+      }
+    }
+  }
+  .adv-container{
+    .adv-card{
+      &:before{
+      }
+      &:after{
+
+      }
+      &:nth-child(1){
+      }
+      .count{
+      }
+      h3{
+      }
+      p{
+      }
+      &:hover{
+        &:before{
+        }
+        .count{
+        }
+        h3{
+        }
+        p{
+        }
+      }
+
+    }
+  }
+  .adv-setting{
+    i {
+      &:before {
+      }
+      &:hover {
+      }
+
+      &:nth-child(1) {
+        &:after {
+        }
+      }
+      &:nth-child(2) {
+        &:after {
+        }
+      }
+      &:hover:after {
+      }
+    }
+  }
+}
+

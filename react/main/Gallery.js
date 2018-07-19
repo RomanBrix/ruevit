@@ -49,7 +49,7 @@ export default class Gallery extends Component {
         const { imgs, activePhoto } = this.state;
         let newUrl = '';
         if(activePhoto + 1 < imgs.length) {
-            newUrl = imgs[activePhoto + 1];
+            newUrl = imgs[activePhoto + 1].name;
             $('#f-photo').css('background-image', `url(src/gallery/${newUrl})`);
             if($('#arrowThatIneed').hasClass('not-active')) {
                 $('#arrowThatIneed').removeClass('not-active');
@@ -70,7 +70,7 @@ export default class Gallery extends Component {
         const { imgs, activePhoto } = this.state;
         let newUrl = '';
         if(activePhoto  > 0) {
-            newUrl = imgs[activePhoto - 1];
+            newUrl = imgs[activePhoto - 1].name;
             $('#f-photo').css('background-image', `url(src/gallery/${newUrl})`);
             if($('#arrowThatIneed2').hasClass('not-active')) {
                 $('#arrowThatIneed2').removeClass('not-active');
@@ -93,8 +93,8 @@ export default class Gallery extends Component {
         const { imgs } = this.state;
         const imgContainer = imgs.map((item, index)=>{
             return (
-                <div className="gallery-img"  style={{backgroundImage: `url(src/gallery/${item})`}}id={`photo-${index}`} key={index} onClick={()=>{
-                    this.toggleFullScreenPhoto(item, index)
+                <div className="gallery-img"  style={{backgroundImage: `url(src/gallery/${item.name})`}}id={`photo-${index}`} key={index} onClick={()=>{
+                    this.toggleFullScreenPhoto(item.name, index)
                 }}/>
             )
         });

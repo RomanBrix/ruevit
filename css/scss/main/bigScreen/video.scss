@@ -1,8 +1,4 @@
 .video {
-  flex-direction: column;
-  //min-height: 100vh;
-  height: auto;
-  justify-content: flex-start;
   #video-layer-on {
     i {
       &:hover {
@@ -10,22 +6,22 @@
       }
     }
     iframe {
-      width: 80%;
-      height: 55%;
     }
   }
   #bg-for-video {
-    width: 100%;
-    position: static;
-    height: 400px;
     &:before {
     }
   }
   .open-video {
-    position: absolute;
-    top: calc(200px - 75px);
+
     .video-play {
+      width: 250px;
+      height: 250px;
       i {
+
+        width: 125px;
+        height: 125px;
+        font-size: 3.5em;
         &:before {
         }
         &::after {
@@ -33,23 +29,28 @@
       }
 
       &:hover {
+
         i {
+          width: 250px;
+          height: 250px;
+          &:after{
+            width: 125px;
+            height: 125px;
+          }
         }
       }
     }
   }
 
   .video-preview {
-    width: 100%;
-    padding: 25px 20px 25px 25px;
+    width: 49%;
     h2 {
-      font-size: 27px;
+      font-size: 60px;
       &:before {
-        top: -23px;
       }
     }
     p {
-      font-size: 15px;
+      font-size: 1.3em;
     }
     img {
     }
