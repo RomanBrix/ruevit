@@ -53,11 +53,18 @@ body{
       }
     }
 
-    @import "layouts/Loader";
+    //@import "layouts/Loader";
     @import "layouts/Header";
+    @import "layouts/NotFound";
+    @import "layouts/ReadableDraftJs";
     @import "main/index";
     @import "gallery/index";
     @import "about/index";
+    @import "service/index";
+    @import "news/index";
+
+    @import "admin/login";
+    @import "admin/index";
 
 
     .shake-element{

@@ -1,0 +1,10 @@
+.admin{
+  background: rgba(242, 244, 245, 1.000);
+  min-height: 100vh;
+  @import "header";
+  @import "profile";
+  @import "slider";
+  @import "gallery";
+  @import "news";
+  @import "advServ";
+}

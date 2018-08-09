@@ -10,6 +10,11 @@ export default class Gallery extends Component {
             activePhoto: 0
         }
     }
+    componentWillReceiveProps(newProps){
+        this.setState({
+            imgs: newProps.photosToPreview.slice(0,6)
+        })
+    }
 
     toggleFullScreenPhoto(src, activePhoto){
         const { imgs } = this.state;
@@ -26,7 +31,7 @@ export default class Gallery extends Component {
                 }
             }
             //off btn 4wd when we need this
-            console.log(activePhoto);
+            // console.log(activePhoto);
             if(activePhoto === imgs.length - 1) {
                 if (!($('#arrowThatIneed2').hasClass('not-active'))) {
                     $('#arrowThatIneed2').addClass('not-active');

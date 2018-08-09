@@ -1,18 +1,8 @@
 .big-gallery{
-    //min-height: 100vh;
-  //background: rgba(0, 0, 0, .5);
   position: relative;
   overflow: hidden;
-  //background: ;
-  //background-image: url("./bg.jpg");
-  //background-position: ;
-  //background-repeat: repeat;
-  //filter: grayscale(100%);
-  background: rgba(53, 53, 53, 1.000) round center center fixed;//
-  background-size: 250px 250px;
-  //background: rgba(53, 53, 53, 1.000) no-repeat center center ;//
-  //background-size: 40%;
-  //background-size: cover;
+  background: rgba(53, 53, 53, 1.000) no-repeat center center;
+  background-size: 40%;
   min-height: 100vh;
   &:before{
     z-index: 0;
@@ -43,6 +33,12 @@
         height: 80%;
         background: #f4f7fa no-repeat center center ;//fixed
         background-size: cover;
+      }
+      .vertical{
+        width: 45% !important;
+        height: 90% !important;
+        //background: #f4f7fa no-repeat center -35px !important;
+        background-position: center -50px !important;
       }
       .settings{
         width: 100%;

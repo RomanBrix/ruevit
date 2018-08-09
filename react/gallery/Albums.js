@@ -3,16 +3,20 @@ import React, {Component} from 'react';
 export default class Albums extends Component {
     render() {
         const { albums, photosToAlbum } = this.props.frontRedux;
-        console.log(photosToAlbum);
         const albom_container = albums.map((item, index)=>{
             let srcOfBg = '';
             let i = 0;
             while(true){
-                if(item.id === photosToAlbum[i].alb_id){
-                    srcOfBg = photosToAlbum[i].name;
-                    break;
+                if(photosToAlbum[i] !== undefined) {
+                    if (item.id === photosToAlbum[i].alb_id) {
+                        srcOfBg = photosToAlbum[i].name;
+                        break;
+                    } else {
+                        i++;
+                    }
                 }else{
-                    i++;
+                    srcOfBg = 'ph1.png';
+                    break;
                 }
 
                 //НА ВСЯКИЙ СЛУЧАЙ
@@ -21,6 +25,7 @@ export default class Albums extends Component {
                     break
                 }
             }
+
             return(
                 <div className={`albom-card`} style={{ backgroundImage: `url(src/gallery/${srcOfBg})`}} key={index} onClick={()=>{
                     this.props.history.push(`/gallery/${item.id}-${index}`)
@@ -31,9 +36,7 @@ export default class Albums extends Component {
         });
         return (
             <div className="big-gallery" style={{
-                background: `rgba(53, 53, 53, 1.000) no-repeat center center`,
-                backgroundSize: `40%`,
-                backgroundImage: `url(/src/logo.svg)`
+                backgroundImage: `url(/src/shevron.svg)`
             }}>
                 <div className="gallery-head">
                     <h2 className={`with-left-stroke`}>Все альбомы</h2>

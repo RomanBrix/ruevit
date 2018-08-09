@@ -1,8 +1,12 @@
 import React, {Component} from 'react';
 
 export default class Contact extends Component {
+    validateEmail(email) {
+        const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
+    }
     render() {
-        const { contacts } = this.props;
+        const { contacts, contactForm } = this.props;
 
         return (
             <div className="contact" id={`contact`}>
@@ -17,9 +21,9 @@ export default class Contact extends Component {
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias dolorem, est laboriosam laudantium unde.</p>
                         <div className="contact-socials">
                             <ul>
-                                <li className={'inst'} onClick={()=>{
-                                    window.open(`${contacts.socials.insta}`);
-                                }}><i className={'icon-instagram'}/></li>
+                                {/*<li className={'inst'} onClick={()=>{*/}
+                                    {/*window.open(`${contacts.socials.insta}`);*/}
+                                {/*}}><i className={'icon-instagram'}/></li>*/}
 
                                 <li className={'fb'} onClick={()=>{
                                     window.open(`${contacts.socials.fb}`);
@@ -44,20 +48,23 @@ export default class Contact extends Component {
                         <div className="form-container">
                             <div className="left">
                             <span className={`name`}>Имя</span>
-                            <input type="text" id={'name'} placeholder={`Роман`}/>
+                            <input type="text" id={'name'}  ref={`name`}/>
 
                             <span className={`mail`}>Email</span>
-                            <input type="mail" id={'mail'} placeholder={`hello@gmail.com`}/>
+                            <input type="mail" id={'mail'}  ref={'mail'}/>
 
                             <span className={`tel`}>Телефон</span>
-                            <input type="number" id={'tel'} placeholder={`+380`}/>
+                            <input type="number" id={'tel'}  ref={`tel`}/>
                             </div>
                             {/*<span className="msg">Message</span>*/}
                             <div className="right">
-                                <textarea name="msg" id="msg" placeholder={`Сообщение`}/>
+                                <textarea name="msg" id="msg" placeholder={`Сообщение`} ref={`msg`}/>
                             </div>
                         </div>
-                        <div className="btn">Send</div>
+                        <div className="btn" onClick={()=>{
+                            const { name, mail, tel, msg } = this.refs;
+                            contactForm('contactForm',name,tel, mail,msg);
+                        }}>Отправить</div>
                     </div>
                 </div>
             </div>

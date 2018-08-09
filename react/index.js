@@ -1,7 +1,26 @@
 // import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import {
-    testFunc
+    fastCall,
+    contactForm,
+    getLogin,
+    changePassword,
+    addNewUser,
+    getSliderPhoto,
+    uploadImages,
+    changeSlide,
+    getAlbAndPhotos,
+    changeAlbumName,
+    deletePhotoFromAlb,
+    deleteAlb,
+    addAlb,
+    addPhotoToAlb,
+    getNews,
+    addNews,
+    deleteNews,
+    changeNews,
+    getAdvServ,
+    changeAdvServ
 } from "../redux/front/front-actions";
 import App from "./App";
 
@@ -14,5 +33,24 @@ const mapStateToProps = ( state ) => {
 export default connect(
     mapStateToProps,
     {
-        testFunc
+        fastCall,
+        contactForm,
+        getLogin,
+        changePassword,
+        addNewUser,
+        getSliderPhoto,
+        uploadImages,
+        changeSlide,
+        getAlbAndPhotos,
+        changeAlbumName,
+        deletePhotoFromAlb,
+        deleteAlb,
+        addAlb,
+        addPhotoToAlb,
+        getNews,
+        addNews,
+        deleteNews,
+        changeNews,
+        getAdvServ,
+        changeAdvServ
     })(App);

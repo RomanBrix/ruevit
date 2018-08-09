@@ -21,6 +21,12 @@ export default class Intro extends Component {
         $('.set-active').toggleClass('set-active');
         $(need).toggleClass('set-active')
     }
+    componentWillReceiveProps(newprops){
+        // console.log(newprops);
+        this.setState({
+            imgs: newprops.slider
+        })
+    }
 
     nextSlide() {
         const {imgs, slide} = this.state;
@@ -34,15 +40,15 @@ export default class Intro extends Component {
                 slide: slide + 1
             })
         }else{
-            // const allSlides = $('.slides');
-            // for(let i = slide - 2; i >= 0; i--){
-            //     $(allSlides[i]).animate({
-            //         marginLeft: `0%`
-            //     }, 500);
-            // }
-            // this.setState({
-            //     slide:1
-            // })
+            const allSlides = $('.slides');
+            for(let i = slide - 2; i >= 0; i--){
+                $(allSlides[i]).css({
+                    marginLeft: `0%`
+                });
+            }
+            this.setState({
+                slide:1
+            })
         }
     }
 
@@ -52,20 +58,20 @@ export default class Intro extends Component {
         if(slide > 1) {
             $(`#slide-${slide-1}`).css({
                 marginLeft: `0%`
-            }, 500);
+            });
             this.setState({
                 slide: slide - 1
             })
         }else{
-            // const allSlides = $('.slides');
-            // for(let i = 0; i <= imgs.length-2; i++){
-            //     $(allSlides[i]).css({
-            //         marginLeft: `-100%`
-            //     }, 500);
-            // }
-            // this.setState({
-            //     slide:imgs.length
-            // })
+            const allSlides = $('.slides');
+            for(let i = 0; i <= imgs.length-2; i++){
+                $(allSlides[i]).css({
+                    marginLeft: `-100%`
+                });
+            }
+            this.setState({
+                slide:imgs.length
+            })
         }
     }
 
@@ -98,13 +104,13 @@ export default class Intro extends Component {
 
 
 
-
     render() {
         const { imgs } = this.state;
         const imgReturn = [];
         const settingReturn = [];
+        const { fastCall } = this.props;
         imgs.map((item, index)=>{
-            imgReturn.push(<div style={{backgroundImage: `url(src/slider/${item})`}}  className={`slides`} id={`slide-${index+1}`} key={index}/>);
+            imgReturn.push(<div style={{backgroundImage: `url(src/slider/${item.img})`}}  className={`slides`} id={`slide-${index+1}`} key={index}/>);
                 settingReturn.push(<div className="set" key={index} onClick={()=>{
                     this.manualSlide(index+1);
                 }}/>);
@@ -126,9 +132,20 @@ export default class Intro extends Component {
                     {settingReturn}
                 </div>
                 <div className="intro-text">
-                    <h1>Безопасность в любой ситуации.</h1>
+                    {/*<h1>Безопасность в любой ситуации.</h1>*/}
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem corporis dolorem ea eum omnis possimus quod reiciendis rerum sunt voluptas?</p>
-                    <div className="btn">Заказать звонок</div>
+                    <div className="btn" onClick={()=>{
+                        let phone = '';
+
+                        do{
+                            phone = prompt('Ваш номер телефона','');
+
+                        }while(isNaN(Number(phone)));
+
+                        if(phone !== null) {
+                            fastCall('fastCall', phone);
+                        }
+                    }}>Заказать звонок</div>
                 </div>
                     <svg className="arrows" onClick={()=>{
                         $('html, body').animate({

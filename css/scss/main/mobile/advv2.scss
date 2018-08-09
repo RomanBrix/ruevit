@@ -1,0 +1,40 @@
+.adv-v2{
+  padding: 20px 50px;
+  box-sizing: border-box;
+  .adv-intro{
+    padding: 0;
+    h2{
+      font-size: 27px;
+    }
+  }
+  .adv-cards{
+    margin-top: 10px;
+  .bg-for-adv{
+    display: none;
+    .bg-img{
+    }
+  }
+    .adv-card-v2 {
+      //position: relative;
+      position: static;
+      width: 100%;
+      h2 {
+        font-size: 22px;
+      }
+
+      &:before {
+        display: none;
+      }
+
+
+      &:hover {
+        h2 {
+        }
+      }
+      &:hover:before {
+        opacity: 1;
+      }
+    }
+  }
+
+}

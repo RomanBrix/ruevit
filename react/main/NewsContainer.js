@@ -5,13 +5,13 @@ export default class NewsContainer extends Component {
         const { news,history } = this.props;
 
         //template for description
-        const bigDesc = news.desc.split('@%&%@');
-        const fullDesc = bigDesc.map((item, index)=>{
-            return(
-                <p key={index}>
-                    {item}
-                </p>)
-        });
+        // const bigDesc = news.desc.split('@%&%@');
+        // const fullDesc = bigDesc.map((item, index)=>{
+        //     return(
+                {/*<p key={index}>*/}
+                    // {item}
+                // </p>)
+        // });
 
         return (
             <div className={`news-card`} onClick={()=>{
@@ -20,7 +20,7 @@ export default class NewsContainer extends Component {
                 <div className="date">{news.date}</div>
                 <h3>{news.title}</h3>
                 <div className="desc">
-                    {fullDesc}
+                    {news.desc_r}
                 </div>
             </div>
         )

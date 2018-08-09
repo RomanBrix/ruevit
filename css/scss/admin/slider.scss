@@ -1,0 +1,143 @@
+.settings-slider{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: rgba(243, 245, 246, 1.000);
+  width: 100%;
+  .slider-container{
+    width: 85%;
+    background: white;
+    box-sizing: border-box;
+    margin-bottom: 25px;
+    box-shadow: 0 0px 25px rgba(64, 64, 64, .05);
+    padding: 20px 25px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+
+    .slides{
+      box-sizing: border-box;
+      flex: 75%;
+      max-width: 75%;
+      min-width: 75%;
+      height: 300px;
+      background: no-repeat center center ;//fixed
+      background-size: cover;
+      display: flex;
+      align-items: flex-start;
+      position: relative;
+      justify-content: flex-end;
+      margin-bottom: 20px;
+
+      .delete, .change{
+        position: relative;
+        z-index: 1;
+        margin-right: 20px;
+        margin-top: 15px;
+        padding: 10px 20px;
+        cursor: pointer;
+        //box-sizing: border-box;
+        background: red;
+
+        transition: .25s;
+        color: white;
+        opacity: 0;
+
+      }
+      .change{
+        background: rgba(168, 138, 71, 1.000);
+      }
+      &:before{
+        z-index: 0;
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0);
+        transition: .25s;
+
+      }
+      &:hover{
+        .delete, .change{
+          opacity: 1;
+        }
+      }
+      &:hover:before{
+        background: rgba(0, 0, 0, .4);
+      }
+    }
+    .btn{
+      //flex: 100%;
+      padding: 15px 20px;
+      transition: .25s;
+      cursor: pointer;
+      background: transparent;
+      border-radius: 6px;
+      &:hover{
+        background: rgba(168, 138, 71, 1.000);
+        color: white;
+      }
+    }
+    .upload{
+      z-index: 10000;
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: rgba(0, 0, 0, .5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .upload-container{
+        width: 50%;
+        background: white;
+        box-sizing: border-box;
+        margin-bottom: 25px;
+        box-shadow: 0 0px 25px rgba(64, 64, 64, .05);
+        padding: 20px 25px;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+        .up{
+          position: relative;
+          width: 150px;
+          height: 50px;
+          //background: #000;
+          background: rgba(168, 138, 71, 1.000);
+          color: white;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 20px;
+          input{
+            display: none;
+            z-index: 100;
+            position: absolute;
+            visibility: hidden;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+          }
+        }
+        .save{
+          padding: 15px 20px;
+          transition: .25s;
+          cursor: pointer;
+          background: transparent;
+          border-radius: 6px;
+          &:hover{
+            background: rgba(168, 138, 71, 1.000);
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}

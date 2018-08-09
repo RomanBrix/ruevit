@@ -8,10 +8,16 @@ export default class News extends Component {
             news: props.news
         };
     }
+    componentWillReceiveProps(newProps){
+        this.setState({
+            news: newProps.news
+        })
+    }
     render() {
         const { history } = this.props;
         const { news } = this.state;
-        const newsContainer = news.map((item)=>{
+
+        const newsContainer = news.slice(0,3).map((item)=>{
             return (
                 <NewsContainer key={item.id} news={item} history={history}/>
             )

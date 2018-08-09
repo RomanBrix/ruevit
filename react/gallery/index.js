@@ -9,8 +9,8 @@ export default class Gallery extends Component {
         const alb_id = match.params.id;
         const img = props.frontRedux.photosToAlbum;
         let imgsFromAlbum = [];
-        console.log(props);
-        console.log(img);
+        // console.log(props);
+        // console.log(img);
         for (let i = 0; i < img.length; i++) {
             // console.log(img[i].alb_id );
             // console.log(imgs[i].alb_id );
@@ -24,8 +24,11 @@ export default class Gallery extends Component {
         }
     }
 
-    toggleFullScreenPhoto(src, activePhoto){
+    toggleFullScreenPhoto(src, activePhoto, w, h){
         const { imgs } = this.state;
+        if(+h > +w){
+            $('#f-photo').addClass('vertical');
+        }
         if(src !== 'close') {
             $('#f-photo').css('background-image', `url(/src/gallery/${src})`);
             //off btn back when we need this
@@ -49,6 +52,12 @@ export default class Gallery extends Component {
                     $('#arrowThatIneed2').removeClass('not-active');
                 }
             }
+        }else {
+            setTimeout(()=>{
+                if($('#f-photo').hasClass('vertical')){
+                    $('#f-photo').removeClass('vertical');
+                }}, 101);
+
         }
         $('.fullScreenPhoto').fadeToggle().css('display','flex');
         $('body').toggleClass('stop-body');
@@ -62,6 +71,19 @@ export default class Gallery extends Component {
         const { imgs, activePhoto } = this.state;
         let newUrl = '';
         if(activePhoto + 1 < imgs.length) {
+            // console.log(imgs[activePhoto + 1]);
+            //vertical or no
+            if(+imgs[activePhoto + 1].sizey > +imgs[activePhoto + 1].sizex ){
+                if(!($('#f-photo').hasClass('vertical'))) {
+                    $('#f-photo').addClass('vertical');
+                }
+            }else{
+                $('#f-photo').removeClass('vertical');
+            }
+
+
+
+
             newUrl = imgs[activePhoto + 1].name;
             $('#f-photo').css('background-image', `url(/src/gallery/${newUrl})`);
             if($('#arrowThatIneed').hasClass('not-active')) {
@@ -83,6 +105,15 @@ export default class Gallery extends Component {
         const { imgs, activePhoto } = this.state;
         let newUrl = '';
         if(activePhoto  > 0) {
+
+            if(+imgs[activePhoto - 1].sizey > +imgs[activePhoto - 1].sizex){
+                if(!($('#f-photo').hasClass('vertical'))) {
+                    $('#f-photo').addClass('vertical');
+                }
+            }else{
+                $('#f-photo').removeClass('vertical');
+            }
+
             newUrl = imgs[activePhoto - 1].name;
             $('#f-photo').css('background-image', `url(/src/gallery/${newUrl})`);
             if($('#arrowThatIneed2').hasClass('not-active')) {
@@ -101,34 +132,23 @@ export default class Gallery extends Component {
         }
     };
 
+
     render() {
         // console.log(this.props);
         // const { frontRedux } = this.props;
         const { imgs } = this.state;
         const { albums } = this.props.frontRedux;
         const { match } = this.props;
-        // const alb_id = match.params.id;
-        //
-        // let imgsFromAlbum = [];
-        // for (let i = 0; i < imgs.length; i++) {
-        //     console.log(imgs[i].alb_id );
-        //     // console.log(imgs[i].alb_id );
-        //     if(imgs[i].alb_id == alb_id){
-        //         imgsFromAlbum.push(imgs[i]);
-        //     }
-        // }
-        // console.log(imgsFromAlbum);
-        // console.log(match.params);
         const imgContainer = imgs.map((item, index)=>{
             return (
-                <div className="gallery-img"  style={{backgroundImage: `url(/src/gallery/${item.name})`}}id={`photo-${index}`} key={item.id} onClick={()=>{
-                    this.toggleFullScreenPhoto(item.name, index)
+                <div className={`gallery-img`}  style={{backgroundImage: `url(/src/gallery/${item.name})`}}id={`photo-${index}`} key={item.id} onClick={()=>{
+                    this.toggleFullScreenPhoto(item.name, index, item.sizex, item.sizey)
                 }}/>
             )
         });
         return (
             <div className="big-gallery" style={{
-                backgroundImage: `url(/src/logo.svg)`,
+                backgroundImage: `url(/src/shevron.svg)`,
             }}>
                 {/*<GHeader/>*/}
                 <div className="fullScreenPhoto">
@@ -136,7 +156,10 @@ export default class Gallery extends Component {
                     <div className="settings">
                         <i className="icon-cancel" onClick={()=>{
                             this.toggleFullScreenPhoto('close', 0);
-                        }}/>
+
+
+                        }
+                        }/>
                         <i className={`icon-left-open-big not-active`} id="arrowThatIneed"onClick={()=>{
                             this.backImg();
                         }}/>

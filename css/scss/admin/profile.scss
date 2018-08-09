@@ -1,0 +1,85 @@
+.settings-profile{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: rgba(243, 245, 246, 1.000);
+  width: 100%;
+  .profile-container{
+    width: 85%;
+    background: white;
+    box-sizing: border-box;
+    margin-bottom: 25px;
+    box-shadow: 0 0px 25px rgba(64, 64, 64, .05);
+    padding: 20px 25px;
+    h2, h3, h4{
+      //color: rgba(158, 125, 49, 1.000);
+      color: #000;
+    }
+    .change-password, .new-user{
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 30px;
+      .group {
+        position: relative;
+        label {
+          position: absolute;
+          //margin-top: 15px;
+          //right: 50%;
+          left: 15px;
+          top: 5px;
+
+        }
+        input {
+          margin-bottom: 25px;
+          background: transparent;
+          position: relative;
+          z-index: 2;
+          width: 300px;
+          border: 1px solid rgba(209, 219, 227, 1.000);
+          border-radius: 6px;
+          padding: 30px 0px 10px 20px;
+          box-sizing: border-box;
+          height: 50px;
+          color: rgba(148, 169, 185, 1.000);
+          transition: .25s;
+          &:active, &:hover, &:focus {
+            outline: 0;
+            outline-offset: 0;
+            border-color: rgba(158, 125, 49, 1.000);
+            background: rgba(247, 249, 250, 1.000);
+          }
+        }
+      }
+      .btn{
+        border-radius: 4px;
+        width: 205px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        background:rgba(168, 138, 71, 1.000);
+        box-shadow: 0px 5px 20px rgba(161, 125, 47, 0.4);
+        //margin-top: 35px;
+        cursor: pointer;
+        transition: .25s;
+        &:hover{
+          transform: scale(1.03);
+        }
+      }
+    }
+    .new-user{
+      .group {
+        label {
+        }
+        input {
+        }
+      }
+      .btn{
+        width: 215px;
+      }
+    }
+  }
+}

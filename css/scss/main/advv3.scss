@@ -1,0 +1,206 @@
+#adv-v3{
+  min-height: 100vh;
+  width: 100%;
+  margin-bottom: 80px;
+  padding: 80px 100px  0 100px;
+  box-sizing: border-box;
+  .adv-intro{
+    h2{
+    }
+  }
+  .adv-container{
+
+    .top, .bottom{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .top{}
+    .bottom{}
+    .adv-card-v3{
+      flex: 0 0 auto;
+      cursor: pointer;
+      background: no-repeat center center ;//fixed
+      background-size: cover;
+      box-sizing: border-box;
+      width: 23%;
+      min-width: 23%;
+      height: 353px;
+      margin-bottom: 20px;
+      //margin-right: 32px;
+      padding: 32px 36px;
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.17);
+      border-radius: 6px;
+      position: relative;
+      transition: .25s;
+
+
+      &:before{
+        z-index: 1;
+        content: '';
+        position: absolute;
+        //background: rgba(0, 0, 0, 0.58);`
+        opacity: 1;
+        background: white;
+        width: 100%;
+        //box-shadow: 0px 4px 35px rgba(0, 0, 0, 0.33);
+        height: 100%;
+        left: 0;
+        top: 0;
+        transition: .25s;
+        border-radius:5px ;
+
+      }
+      &:after{
+        transition: .25s;
+        z-index: 0;
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        border-radius:5px ;
+        //background: linear-gradient(102.64deg, #A88A47 10.07%, #86600B 50.22%, #513E14 89.93%);
+        //box-shadow: 0px 40px 80px rgba(0, 0, 0, 0.1);
+        //opacity: 0.05;
+        background: linear-gradient(102.64deg, #A88A47 10.07%, #86600B 50.22%, #513E14 89.93%);
+        box-shadow: 0px 40px 80px rgba(0, 0, 0, 0.1);
+        opacity: 0.05;
+      }
+      &:nth-child(1){
+        //margin-left: 15px;
+      }
+      .count{
+        position: relative;
+        z-index: 2;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        font-size: 40px;
+        letter-spacing: 5px;
+        transition: .25s;
+        //color: #FFFFFF;
+        color: rgba(73, 73, 73, 1.000);
+
+      }
+      h3{
+        position: relative;
+        z-index: 2;
+        font-weight: 500;
+        line-height: normal;
+        font-size: 32px;
+        letter-spacing: -1px;
+        margin: 15px 0;
+        transition: .25s;
+        /* Gray 6 */
+        //color: #F2F2F2;
+        color: #9E7D32;
+      }
+      p{
+        transition: .25s;
+        z-index: 2;
+        margin: 0;
+        position: relative;
+        line-height: 23px;
+        font-size: 14px;
+        letter-spacing: -1px;
+        color: #888888;
+        //color: #FFFFFF;
+      }
+
+      &:hover{
+        box-shadow: 0px 4px 35px rgba(0, 0, 0, 0.48);
+        transform: scale(1.01);
+        &:before{
+          //background: rgba(0, 0, 0, 0.58);
+          //  opacity: 0.9;
+          background: rgba(39, 39, 39, 0.6);
+
+        }
+        .count{
+          color: rgba(158, 125, 49, 1.000);
+        }
+        h3{
+          color: white;
+        }
+        p{
+          color: white;
+        }
+      }
+
+    }
+  }
+  @media (min-width: 1301px) {
+    .adv-intro{
+      h2{
+        font-size: 56px;
+      }
+    }
+    .adv-container {
+
+      .top, .bottom {
+
+      }
+      .top {
+      }
+      .bottom {
+      }
+      .adv-card-v3 {
+        height: 415px;
+        padding-top: 40px;
+        .count {
+        }
+        h3{
+          margin: 30px 0;
+        }
+        p{
+          font-size: 19px;
+          line-height: 27px;
+        }
+      }
+    }
+  }
+  @media (max-width:481px) {
+    padding-left: 50px;
+    padding-right: 50px;
+    .adv-intro{
+      h2{
+        font-size: 23px;
+        &:before{
+          height: 100%;
+        }
+      }
+    }
+    .adv-container {
+
+      .top, .bottom {
+        flex-wrap: wrap;
+      }
+      .top {
+      }
+      .bottom {
+      }
+      .adv-card-v3 {
+        flex: 100%;
+        max-width: 100%;
+        //height: 415px;
+        //padding-top: 40px;
+        &:before{
+          background: rgba(39, 39, 39, 0.6);
+        }
+
+        .count {
+          color: rgba(158, 125, 49, 1.000);
+        }
+        h3{
+          color: white;
+        }
+        p{
+          color: white;
+        }
+      }
+    }
+  }
+}
+

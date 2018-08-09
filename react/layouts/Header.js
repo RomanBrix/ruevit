@@ -17,7 +17,7 @@ export default class Header extends Component {
     render() {
         const { contacts, history } = this.props;
 
-        console.log(this.props);
+        // console.log(this.props);
         return (
             <div className="header">
                 <div className="logo">
@@ -54,9 +54,9 @@ export default class Header extends Component {
                 </div>
                 <div className="socials">
                     <ul>
-                        <li className={'inst'} onClick={()=>{
-                            window.open(`${contacts.insta}`);
-                        }}><i className={'icon-instagram'}/></li>
+                        {/*<li className={'inst'} onClick={()=>{*/}
+                            {/*window.open(`${contacts.insta}`);*/}
+                        {/*}}><i className={'icon-instagram'}/></li>*/}
 
                         <li className={'fb'} onClick={()=>{
                             window.open(`${contacts.fb}`);
