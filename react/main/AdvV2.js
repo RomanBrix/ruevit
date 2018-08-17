@@ -2,12 +2,13 @@ import React, {Component} from 'react';
 
 export default class AdvV2 extends Component {
     render() {
-        const names = ['','Работа 24 на 7','Сотрудники с опытом','Cовременная система управления операциями', 'Оказание услуг в любой точке мира', 'Ответственность за объекты и грузы', 'Ответственность за сотрудников','Современное техническое оборудование'];
-        const namesContainer = names.map((item, index)=>{
-            return <div className={`adv-card-v2`} key={index} onClick={()=>{
-                this.props.history.push(`/adv/${index}`);
+        // const names = ['','Работа 24 на 7','Сотрудники с опытом','Cовременная система управления операциями', 'Оказание услуг в любой точке мира', 'Ответственность за объекты и грузы', 'Ответственность за сотрудников','Современное техническое оборудование'];
+        const { advs } = this.props;
+        const namesContainer = advs.map((item, )=>{
+            return <div className={`adv-card-v2`} key={item.id} onClick={()=>{
+                this.props.history.push(`/adv/${item.id}`);
             }}>
-                <h2>{item}</h2>
+                <h2>{item.title}</h2>
             </div>
         });
         return (

@@ -1,0 +1,50 @@
+
+  .intro{
+    .slider{
+      .slides{}
+
+      &:before{}
+      &:after {}
+
+
+      .icon-left-open-big, .icon-right-open-big{
+        font-size: 3em;
+        &:hover{}
+      }
+      .icon-left-open-big{}
+      .icon-right-open-big{}
+      div {}
+      img{}
+    }
+    .settings{
+      .set{
+        width: 20px;
+        height: 20px;
+        &:hover{}
+      }
+      .set-active{}
+    }
+    .intro-text{
+      h1{
+        font-size: 75px;
+      }
+      p{
+        font-size: 27px;
+        width: 50%;
+      }
+      .btn{
+        width: 250px;
+        height: 80px;
+        font-size: 27px;
+      }
+    }
+    //.down{
+    .arrows {
+      transform: scale(1.5);
+      path {
+        &.a1 {}
+        &.a2 {}
+        &.a3 {}
+      }
+    }
+  }

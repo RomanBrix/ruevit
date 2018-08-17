@@ -1,0 +1,58 @@
+.video {
+  #video-layer-on {
+    i {
+      &:hover {
+
+      }
+    }
+    iframe {
+    }
+  }
+  #bg-for-video {
+    &:before {
+    }
+  }
+  .open-video {
+
+    .video-play {
+      width: 250px;
+      height: 250px;
+      i {
+
+        width: 125px;
+        height: 125px;
+        font-size: 3.5em;
+        &:before {
+        }
+        &::after {
+        }
+      }
+
+      &:hover {
+
+        i {
+          width: 250px;
+          height: 250px;
+          &:after{
+            width: 125px;
+            height: 125px;
+          }
+        }
+      }
+    }
+  }
+
+  .video-preview {
+    width: 49%;
+    h2 {
+      font-size: 60px;
+      &:before {
+      }
+    }
+    p {
+      font-size: 1.3em;
+    }
+    img {
+    }
+  }
+}

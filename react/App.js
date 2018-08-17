@@ -27,7 +27,7 @@ export default class App extends Component {
         };
         props.getSliderPhoto('get_slider_photo');
         props.getAlbAndPhotos('get_alb_and_photo');
-        props.getNews('get_news');
+        // props.getNews('get_news');
         props.getAdvServ('get_adv_serv');
     }
 
@@ -68,7 +68,7 @@ export default class App extends Component {
         const frontRedux = this.props.front.toJS();
         // const { auth } = frontRedux;
         // console.log(auth);
-        console.log(frontRedux.news);
+        // console.log(frontRedux.news);
         return (
             <Router>
                 <RenderRouter>
@@ -76,6 +76,7 @@ export default class App extends Component {
                     <Switch>
                         <Route  exact path="/login" render={(props)=><Login frontRedux={frontRedux} getLogin={getLogin} {...props}/>}/>
                         <Route  path="/admin" render={(props)=><Admin
+                            // getLogin={getLogin}
                             addNewUser={addNewUser}
                             frontRedux={frontRedux}
                             changePassword={changePassword}
@@ -106,8 +107,8 @@ export default class App extends Component {
                         />
                         <Route exact path="/about" render={(props)=><About frontRedux={frontRedux} contacts={contacts} {...props}/>}/>
 
-                        <Route path="/adv/:position" render={(props)=><Adv frontRedux={frontRedux} {...props}/>}/>
-                        <Route path="/service/:position" render={(props)=><Service frontRedux={frontRedux} {...props}/>}/>
+                        <Route path="/adv/:position" render={(props)=><Adv advs={frontRedux.advs} {...props}/>}/>
+                        <Route path="/service/:position" render={(props)=><Service srvs={frontRedux.services} {...props}/>}/>
                         <Switch>
                             <Route exact path="/gallery" render={(props)=><Albums frontRedux={frontRedux} {...props}/>}/>
                             <Route path="/gallery/:id-:pos" render={(props)=><Gallery frontRedux={frontRedux} {...props}/>}/>

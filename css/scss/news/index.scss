@@ -56,6 +56,12 @@
       cursor: pointer;
       position: absolute;
       left: 3.8%;
+
+      @media  (max-width:501px) {
+
+        left: 1.8%;
+        top: 100%;
+      }
       &:before{
         margin: 0;
       }
@@ -95,11 +101,14 @@
     margin-bottom: 25px;
     box-shadow: 0 0px 25px rgba(64, 64, 64, .05);
     padding: 20px 25px;
+    flex-wrap: wrap;
     @media  (max-width:1156px) {
       flex-wrap: wrap;
     }
 
     .news-card{
+      max-width: 340px;
+      flex: 340px;
       margin-bottom: 20px;
       margin-top: 20px;
       transition: .25s;
@@ -197,5 +206,19 @@
     box-shadow: 0 0px 25px rgba(64, 64, 64, .05);
     padding: 20px 25px;
 
+  }
+
+  @media  (max-width:501px) {
+    .news-container{
+      padding: 20px;
+      justify-content: center;
+      .news-card{
+        width: 315px;
+        min-width: 315px;
+        h3{
+          font-size:28px;
+        }
+      }
+    }
   }
 }

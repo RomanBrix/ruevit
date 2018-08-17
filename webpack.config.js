@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const NODE_ENV = process.env.NODE_ENV || 'prod';
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+// const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const PATHS = {
     source: path.join(__dirname, 'points'),
@@ -95,7 +96,25 @@ module.exports = {
         stats: 'errors-only',
         port: 1488,
         historyApiFallback: true,
-    }
+    },
+    // optimization: {
+    //     // splitChunks: {
+    //     //     cacheGroups: {
+    //     //         commons: {
+    //     //             test: /[\\/]node_modules[\\/]/,
+    //     //             name: 'vendor',
+    //     //             chunks: 'all'
+    //     //         }
+    //     //     }
+    //     // }
+    //     nodeEnv: 'production',
+    //     mangleWasmImports: true,
+    //     removeEmptyChunks: true,
+    //     occurrenceOrder: true,
+    //     usedExports: true,
+    //     concatenateModules: true
+    // },
+
 };
 // if (NODE_ENV === 'prod') {
 //     module.exports.plugins.push(

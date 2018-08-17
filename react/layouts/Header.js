@@ -58,13 +58,13 @@ export default class Header extends Component {
                             {/*window.open(`${contacts.insta}`);*/}
                         {/*}}><i className={'icon-instagram'}/></li>*/}
 
-                        <li className={'fb'} onClick={()=>{
-                            window.open(`${contacts.fb}`);
-                        }}><i className={'icon-facebook'}/></li>
+                        {/*<li className={'fb'} onClick={()=>{*/}
+                            {/*window.open(`${contacts.fb}`);*/}
+                        {/*}}><i className={'icon-facebook'}/></li>*/}
 
-                        <li className={'youtube'} onClick={()=>{
-                            window.open(`${contacts.youtube}`);
-                        }}><i className={'icon-youtube'}/></li>
+                        {/*<li className={'youtube'} onClick={()=>{*/}
+                            {/*window.open(`${contacts.youtube}`);*/}
+                        {/*}}><i className={'icon-youtube'}/></li>*/}
 
                     </ul>
                 </div>

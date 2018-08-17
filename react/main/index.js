@@ -26,11 +26,11 @@ export default class MainPage extends Component {
                 <Header contacts={ contacts.socials }  history={history}/>
                 <Intro slider={frontRedux.slider} fastCall={fastCall}/>
                 {/*<Adv advs={frontRedux.advs} history={history} />*/}
-                <AdvV2 history={history}/>
+                <AdvV2 history={history} advs={frontRedux.advs}/>
                 {/*<Video/>*/}
                 <Service history={history} services={frontRedux.services}/>
                 <Gallery history={history} photosToPreview={frontRedux.photosToAlbum}/>
-                <News history={history} news={frontRedux.news}/>
+                {/*<News history={history} news={frontRedux.news}/>*/}
                 <Contact contacts={contacts} contactForm={contactForm} />
             </div>
         )

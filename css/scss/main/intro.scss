@@ -130,12 +130,15 @@
     }
     p{
       //font-size: 1.1em;
-      color: rgba(157, 175, 189, 1.000);
+      //color: rgba(157, 175, 189, 1.000);
+      color: white;
       width: 75%;
       //line-height: 1.7;
+      letter-spacing: 3px;
+
       line-height: 31px;
-      font-size: 18px;
-      letter-spacing: -0.5px;
+      font-size: 21px;
+      //letter-spacing: -0.5px;
       margin: 20px 0;
       padding: 0;
     }

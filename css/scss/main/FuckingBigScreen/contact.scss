@@ -1,0 +1,74 @@
+.contact{
+  .map{
+    iframe{}
+  }
+  .info{
+    .text{
+
+      h2{
+        height: 75px;
+        font-size: 64px;
+        &:before{
+        }
+        &:after{
+        }
+      }
+      p{
+        font-size: 1.4em;
+      }
+      .contact-socials{
+        ul{
+          font-size: 1.5em;
+          li{
+            width: 45px;
+            height: 45px;
+            i{
+              width: 45px;
+              height: 45px;
+              &:before{
+              }
+            }
+            a{
+              i{
+              }
+            }
+            &:hover{
+              i{
+              }
+            }
+          }
+          .special{
+            a:hover{
+              //transform: scale(1.2);
+            }
+          }
+        }
+      }
+    }
+    .form{
+      .form-container{
+        span.mail{
+        }
+        #mail{
+          &::placeholder{
+          }
+          &:active, &:hover, &:focus {
+          }
+        }
+        span.msg{
+        }
+        #msg{
+
+          &::placeholder{
+          }
+          &:active, &:hover, &:focus {
+          }
+        }
+      }
+      .btn{
+        &:hover{
+        }
+      }
+    }
+  }
+}

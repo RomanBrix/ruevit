@@ -1,0 +1,51 @@
+.news{
+  .news-head{
+    h2{
+      height: 75px;
+      font-size: 64px;
+      &:before{
+      }
+    }
+    span{
+    }
+  }
+  .news-container{
+    flex-wrap: wrap;
+    .news-card {
+      width: 29%;
+      flex: 29%;
+      max-width: 29%;
+      min-width: 340px;
+      height: 440px;
+      &:before {
+      }
+
+      .date {
+        font-size: 24px;
+      }
+      h3 {
+        font-size: 30px;
+      }
+      .desc {
+        line-height: 29px;
+        font-size: 24px;
+        p {
+        }
+      }
+    }
+      &:before{
+      }
+      &:hover{
+        .date{
+        }
+        h3{
+        }
+        .desc{
+          p{
+          }
+        }
+      }
+      &:hover:before{
+      }
+    }
+  }

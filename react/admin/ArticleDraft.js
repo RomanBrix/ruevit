@@ -88,9 +88,9 @@ export default class ArticleDraft extends Component {
                         <button onClick={()=>{
                             this.makeSmth('UNDERLINE')
                         }}>UnderLine</button>
-                        <button onClick={()=>{
-                            this.makeSmth('CODE')
-                        }}>MonoSpace</button>
+                        {/*<button onClick={()=>{*/}
+                            {/*this.makeSmth('CODE')*/}
+                        {/*}}>MonoSpace</button>*/}
                     </div>
                 </div>
                 <Editor
@@ -114,7 +114,7 @@ const BLOCK_TYPES = [
     {label: 'H4', style: 'header-four'},
     // {label: 'H5', style: 'header-five'},
     // {label: 'H6', style: 'header-six'},
-    {label: 'Blockquote', style: 'blockquote'},
+    // {label: 'Blockquote', style: 'blockquote'},
     {label: 'UL', style: 'unordered-list-item'},
     {label: 'OL', style: 'ordered-list-item'},
     // {label: 'Code Block', style: 'code-block'},

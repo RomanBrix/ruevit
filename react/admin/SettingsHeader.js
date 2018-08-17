@@ -15,9 +15,9 @@ export default class Admin extends Component {
             <div className="settings-header">
                 <ul>
 
-                    <li>
-                        <NavLink exact to={`/admin/settings-news`} >Новости</NavLink>
-                    </li>
+                    {/*<li>*/}
+                        {/*<NavLink exact to={`/admin/settings-news`} >Новости</NavLink>*/}
+                    {/*</li>*/}
                     <li> <NavLink exact to={`/admin/settings-gallery`} >Галерея</NavLink></li>
                     <li>
                         <NavLink exact to={`/admin/settings-adv-serv`} >Услуги И Приемущества</NavLink>

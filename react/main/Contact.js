@@ -18,20 +18,20 @@ export default class Contact extends Component {
                 <div className="info">
                     <div className="text">
                         <h2 className={`with-left-stroke`}>Контакты</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias dolorem, est laboriosam laudantium unde.</p>
+                        <p>Наша команда работает 24/7 и всегда готова ответить и помочь вам!</p>
                         <div className="contact-socials">
                             <ul>
                                 {/*<li className={'inst'} onClick={()=>{*/}
                                     {/*window.open(`${contacts.socials.insta}`);*/}
                                 {/*}}><i className={'icon-instagram'}/></li>*/}
 
-                                <li className={'fb'} onClick={()=>{
-                                    window.open(`${contacts.socials.fb}`);
-                                }}><i className={'icon-facebook'}/></li>
+                                {/*<li className={'fb'} onClick={()=>{*/}
+                                    {/*window.open(`${contacts.socials.fb}`);*/}
+                                {/*}}><i className={'icon-facebook'}/></li>*/}
 
-                                <li className={'youtube'} onClick={()=>{
-                                    window.open(`${contacts.socials.youtube}`);
-                                }}><i className={'icon-youtube'}/></li>
+                                {/*<li className={'youtube'} onClick={()=>{*/}
+                                    {/*window.open(`${contacts.socials.youtube}`);*/}
+                                {/*}}><i className={'icon-youtube'}/></li>*/}
                                 <li className={`special`}>
                                     <a href={`tel:${contacts.telephone}`}><i className={`icon-phone`}/>{contacts.telephone}</a>
                                 </li>

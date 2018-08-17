@@ -18,9 +18,9 @@ export default class Admin extends Component {
         // console.log(props);
         // console.log(auth);
         this.state = {
-            photosFromAlbum: props.frontRedux.photosToAlbum
-        }
-
+            // photosFromAlbum: props.frontRedux.photosToAlbum
+        };
+        // props.getLogin('hash');
     }
 
 
@@ -49,7 +49,7 @@ export default class Admin extends Component {
         } = this.props;
         // const { photosFromAlbum } = this.state;
         const { auth } = frontRedux;
-        // console.log(photosFromAlbum);
+        console.log(auth);
         if(auth === false){
             return <Redirect to={`/login`}/>
         }
@@ -69,19 +69,19 @@ export default class Admin extends Component {
                     />
 
                     <Switch>
-                        <Route  exact path="/admin/settings-news" render={(props)=><SettingsNews
-                            {...props}
-                            news={frontRedux.news}
-                            addNews={addNews}
-                            deleteNews={deleteNews}
-                            getNews={getNews}
-                        />}/>
-                        <Route  path="/admin/settings-news/:id" render={(props)=><ArticleNews
-                            news={frontRedux.news}
-                            changeNews={changeNews}
-                            getNews={getNews}
-                            history={history}
-                            {...props}/>}/>
+                        {/*<Route  exact path="/admin/settings-news" render={(props)=><SettingsNews*/}
+                            {/*{...props}*/}
+                            {/*news={frontRedux.news}*/}
+                            {/*addNews={addNews}*/}
+                            {/*deleteNews={deleteNews}*/}
+                            {/*getNews={getNews}*/}
+                        {/*/>}/>*/}
+                        {/*<Route  path="/admin/settings-news/:id" render={(props)=><ArticleNews*/}
+                            {/*news={frontRedux.news}*/}
+                            {/*changeNews={changeNews}*/}
+                            {/*getNews={getNews}*/}
+                            {/*history={history}*/}
+                            {/*{...props}/>}/>*/}
 
                         <Route exact path="/admin/settings-gallery" render={(props)=><SettingsGallery
                             albums={ frontRedux.albums }
@@ -100,6 +100,8 @@ export default class Admin extends Component {
                             deletePhotoFromAlb={deletePhotoFromAlb}
                             getAlbAndPhotos={getAlbAndPhotos}
                             addPhotoToAlb={addPhotoToAlb}
+                            history={history}
+
                             {...props}
                         />}/>
 

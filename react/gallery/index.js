@@ -59,7 +59,7 @@ export default class Gallery extends Component {
                 }}, 101);
 
         }
-        $('.fullScreenPhoto').fadeToggle().css('display','flex');
+        $('.fullScreenPhoto').fadeToggle(100).css('display','flex');
         $('body').toggleClass('stop-body');
 
         this.setState({

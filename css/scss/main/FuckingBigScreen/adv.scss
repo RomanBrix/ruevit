@@ -1,0 +1,111 @@
+.adv-v2{
+  min-height: auto;
+  .adv-intro{
+    h2{
+      height: 75px;
+      font-size: 64px;
+      &:before{
+        height: 100%;
+      }
+    }
+  }
+  .adv-cards{
+    .bg-for-adv{
+      .bg-img{
+        width: 410px;
+        height: 500px;
+      }
+    }
+    .adv-card-v2{
+      width: 450px;
+      height: 150px;
+      box-shadow: 0px 5px 20px rgba(3, 3, 3, 0.07);
+      box-sizing: border-box;
+      padding: 5px 25px;
+      margin-bottom: 15px;
+      background: white;
+      position: absolute;
+      z-index: 1;
+      text-align: center;
+      transition: .25s;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &:before{
+      }
+      &:after{
+
+      }
+      .count{
+      }
+      h2{
+        font-size: 32px;
+      }
+      p{
+      }
+      &:hover{
+        &:before{
+        }
+        .count{
+        }
+        h3{
+        }
+        p{
+        }
+      }
+
+      &:nth-child(2) {
+
+      }
+      &:nth-child(3) {
+        left: calc(50% + 260px);
+        &:before{
+          left: -170px;
+        }
+      }
+      &:nth-child(4) {
+        left: calc(50% + 290px);
+      }
+      &:nth-child(5) {
+        left: calc(50% + 260px);
+      }
+      &:nth-child(6){
+        bottom: 11vh;
+        left: calc(50% - 225px);
+      }
+      &:nth-child(7) {
+        right: calc(50% + 260px);
+        &:before{
+          left: 91%;
+        }
+      }
+      &:nth-child(8) {
+        right: calc(50% + 290px);
+      }
+      &:nth-child(9) {
+        right: calc(50% + 260px);
+      }
+    }
+  }
+  .adv-setting{
+    i {
+      &:before {
+      }
+      &:hover {
+      }
+
+      &:nth-child(1) {
+        &:after {
+        }
+      }
+      &:nth-child(2) {
+        &:after {
+        }
+      }
+      &:hover:after {
+      }
+    }
+  }
+}
+

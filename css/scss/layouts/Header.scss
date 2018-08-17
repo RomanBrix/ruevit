@@ -169,4 +169,17 @@
       font-size: 22px;
     }
   }
+  @media (min-width: 1922px) {
+    .menu{
+      font-size: 26px;
+    }
+    .logo{
+      img{
+        height: 280px;
+      }
+    }
+    .socials{
+      font-size: 26px;
+    }
   }
+}

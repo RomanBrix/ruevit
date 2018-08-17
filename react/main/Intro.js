@@ -133,7 +133,7 @@ export default class Intro extends Component {
                 </div>
                 <div className="intro-text">
                     {/*<h1>Безопасность в любой ситуации.</h1>*/}
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem corporis dolorem ea eum omnis possimus quod reiciendis rerum sunt voluptas?</p>
+                    <p>Невооруженный человек может лишь убегать от зла, но зло не побеждают, бежавши от него</p>
                     <div className="btn" onClick={()=>{
                         let phone = '';
 

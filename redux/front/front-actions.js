@@ -77,19 +77,27 @@ export function getLogin(type,log, pass) {
     return dispatch =>{
         dispatch({type:front.REQUEST,});
         // console.log(log,pass);
-        axios.get(`${URL_GET}`,{ params:{type, log, pass}})
-            .then((res) => {
-                // console.log(res);
 
-                if(res.data === true ) {
-                    dispatch({type: front.LOGIN, login: true});
-                }else{
-                    alert('Не верный логин или пароль!');
-                }
-            })
-            .catch((error) => {
-                console.log(error);
-            });
+        if(type !== 'hash') {
+            axios.get(`${URL_GET}`, {params: {type, log, pass}})
+                .then((res) => {
+                    console.log(res);
+
+                    if (res.data === true) {
+                        dispatch({type: front.LOGIN, login: true});
+                    } else {
+                        // alert('Не верный логин или пароль!');
+                    }
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
+        }else{
+            // const hashOfUser = getCookie('hash');
+            // if(hashOfUser.length > 19) {
+            //     dispatch({type: front.LOGIN, login: true});
+            // }
+        }
     }
 }
 
@@ -150,13 +158,13 @@ export function getSliderPhoto(type) {
         console.log('zapros powel');
         axios.get(`${URL_GET}`,{ params:{type}})
             .then((res) => {
-                // console.log('RES:');
-                // console.log(res);
+                console.log('RES:');
+                console.log(res);
 
                 if(res.data.length >= 1  ) {
                     dispatch({type: front.GET_SLIDES, slides: res.data});
                 }else{
-                    alert('Не верный логин или пароль!');
+                    // alert('Не верный логин или пароль!');
                 }
             })
             .catch((error) => {
@@ -230,10 +238,11 @@ export function getAlbAndPhotos(type) {
             .then((res) => {
                 console.log(res);
 
-                if(res.data.length >= 1  ) {
+                if(res.data.length > 0  ) {
                     dispatch({type: front.GET_ALL_IMG, alb: res.data[0], photos: res.data[1]});
                 }else{
-                    alert('Не верный логин или пароль!');
+                    // alert('Не верный логин или пароль!');
+                    console.log('length: ', res.data.length)
                 }
             })
             .catch((error) => {

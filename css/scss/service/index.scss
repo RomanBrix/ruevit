@@ -54,7 +54,14 @@
       transition: .25s;
       cursor: pointer;
       position: absolute;
-      left: 4.8%;
+      left: 3.8%;
+
+
+      @media  (max-width:501px) {
+
+        left: 1.8%;
+        top: 100%;
+      }
       &:before{
         margin: 0;
       }

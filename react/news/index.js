@@ -4,7 +4,7 @@ import NewsContainer from "../main/NewsContainer";
 export default class News extends Component {
     render() {
         const { news, history } = this.props;
-        const newsContainer = news.slice(0,3).map((item)=>{
+        const newsContainer = news.map((item)=>{
             return (
                 <NewsContainer key={item.id} news={item} history={history}/>
             )

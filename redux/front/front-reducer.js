@@ -1,9 +1,15 @@
 import Immutable from "immutable";
 import { front } from "../actionsAndUrl";
-
+function getCookie(name) {
+    let matches = document.cookie.match(new RegExp(
+        "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+    ));
+    return matches ? decodeURIComponent(matches[1]) : undefined;
+}
+const hashOfUsr = getCookie('hash');
 const InitialState = Immutable.fromJS({
     request: false,
-    auth: true,
+    auth: hashOfUsr !== undefined && hashOfUsr.length > 19,
     // photosToAlbum: ['image.png','ph1.png','ph3.png','ph2.png','ph3.png','image.png','ph1.png','ph3.png','ph2.png','image.png','ph1.png','ph3.png','ph2.png','image.png','ph1.png','ph3.png','ph2.png','image.png','ph1.png','ph3.png','ph2.png','image.png','ph1.png','ph3.png','ph2.png','image.png','ph1.png','ph3.png','ph2.png','image.png','ph1.png','ph3.png','ph2.png'],
     albums: [
         {

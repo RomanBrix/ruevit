@@ -14,10 +14,10 @@
     align-items: center;
     justify-content: center;
     #f-photo{
-      width: 80%;
+      width: 90%;
       height: 80%;
-      background: #f4f7fa no-repeat center center ;//fixed
-      background-size: cover;
+      background: transparent no-repeat center center ;//fixed
+      background-size: contain;
     }
     .settings{
       width: 100%;

@@ -7,6 +7,7 @@ import Fourth from "./Fourth";
 import Fifth from "./Fifth";
 import Sixth from "./Sixth";
 import Seventh from "./Seventh";
+import ReadableDraftJs from "../layouts/ReadableDraftJs";
 
 export default class Adv extends Component {
 
@@ -33,18 +34,29 @@ export default class Adv extends Component {
     }
     render() {
         // console.log(this.props);
-        const { match, history } = this.props;
+        const { match, history, advs } = this.props;
         // const { head } = this.state;
-        const names = ['','Работа 24 на 7','Сотрудники с опытом','Cовременная система управления операциями', 'Оказание услуг в любой точке мира', 'Ответственность за объекты и грузы', 'Ответственность за сотрудников','Современное техническое оборудование'];
-        const head = names[+match.params.position];
-        const container = this.getContainer(match.params.position);
+        const needId = match.params.position;
+        let ourAdv = {};
+        // const names = ['','Работа 24 на 7','Сотрудники с опытом','Cовременная система управления операциями', 'Оказание услуг в любой точке мира', 'Ответственность за объекты и грузы', 'Ответственность за сотрудников','Современное техническое оборудование'];
+        // const head = names[+match.params.position];
+        // const container = this.getContainer(match.params.position);
+        for(let i = 0; i < advs.length; i++){
+            if(advs[i].id == needId){
+                ourAdv = advs[i];
+                break;
+            }
+        }
         return (
             <div className="big-service">
                 <div className="serv-header">
-                    <h1>{head}</h1>
+                    <h1>{ourAdv.title}</h1>
                     <i className='icon-angle-circled-left' onClick={()=>{ history.push('/')}}/>
                 </div>
-                    {container}
+                    {/*{container}*/}
+                <div className="serv-container">
+                    <ReadableDraftJs content={ourAdv.content}/>
+                </div>
             </div>
         )
     }

@@ -37,14 +37,11 @@ export default class ChangeAlbum extends Component {
 
     }
     render() {
-        const { match, changeAlbumName, deletePhotoFromAlb, getAlbAndPhotos, uploadImages, addPhotoToAlb} = this.props;
+        const { match, changeAlbumName, deletePhotoFromAlb, getAlbAndPhotos, uploadImages, addPhotoToAlb, history} = this.props;
         const {AlbumName, save, highlight, openUpload} = this.state;
         const photosFromAlbum = this.getPhotosFromAlbum(match.params.id);
-        // console.log(photosFromAlbum);
         const container = photosFromAlbum.map((item)=>{
-            // console.log(item);
            return  <div className="gallery-img"  style={{backgroundImage: `url(/src/gallery/${item.name})`}} id={`${item.id}`} key={item.id} onClick={({target})=>{
-               // this.toggleFullScreenPhoto(item.name, index)
                const{ highlight } = this.state;
                if(target.classList.contains('highlight')){
                    target.classList.remove('highlight');
@@ -87,14 +84,14 @@ export default class ChangeAlbum extends Component {
                                     console.log(sizes);
                                     if(react){
                                         alert('ok');
-                                        // console.info('names is: ');
-                                        // console.log(names);
                                         addPhotoToAlb('add_photo_to_album', names, sizes, match.params.id, (check)=>{
                                             if(check){
                                                 getAlbAndPhotos('get_alb_and_photo');
                                                 this.setState({
                                                     openUpload: false
-                                                })
+                                                });
+                                                history.push('/admin/settings-gallery');
+
                                             }
                                         });
                                     }else {
@@ -119,19 +116,18 @@ export default class ChangeAlbum extends Component {
                                 })
                             }
                         }}/>
-                        {/*{console.log(this.refs)}*/}
                         {
                             save ?
                                 <div className="save" onClick={()=>{
                                     const { header } = this.refs;
-                                    // console.log(header.value);
                                     changeAlbumName('change_album_name', match.params.id, header.value, (check)=>{
                                         if(check){
                                             alert('Имя успешно созраненно!');
                                             this.setState({
                                                 save:false,
                                                 AlbumName: header.value
-                                            })
+                                            });
+
                                         }else{
                                             alert(check);
                                         }

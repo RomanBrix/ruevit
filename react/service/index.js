@@ -7,6 +7,7 @@ import TehOtdel from "./TehOtdel";
 import YurOtdel from "./YurOtdel";
 import SWAT from "./SWAT";
 import Anal from "./Anal";
+import ReadableDraftJs from "../layouts/ReadableDraftJs";
 
 
 export default class Service extends Component {
@@ -29,19 +30,30 @@ export default class Service extends Component {
         }
     }
     render() {
-        const { frontRedux, history, match } = this.props;
-        const position = match.params.position;
-        const Serv = frontRedux.services[position];
+        const { srvs, history, match } = this.props;
+        const needId = match.params.position;
+        let ourSrv = {};
+        // const Serv = frontRedux.services[position];
 
-        const container = this.getContainer(position);
-        console.log(container);
+
+        // const container = this.getContainer(position);
+        // console.log(container);
+        for(let i = 0; i < srvs.length; i++){
+            if(srvs[i].id == needId){
+                ourSrv = srvs[i];
+                break;
+            }
+        }
         return (
             <div className="big-service">
                 <div className="serv-header">
-                    <h1>{Serv.title}</h1>
+                    <h1>{ourSrv.title}</h1>
                     <i className='icon-angle-circled-left' onClick={()=>{ history.push('/')}}/>
                 </div>
-                {container}
+                {/*{container}*/}
+                <div className="serv-container">
+                    <ReadableDraftJs content={ourSrv.content}/>
+                </div>
             </div>
         )
     }

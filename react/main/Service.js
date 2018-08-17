@@ -12,6 +12,11 @@ export default class Service extends Component {
         }
     }
 
+    componentWillReceiveProps(newProps){
+        this.setState({
+            srvs: newProps.services
+        })
+    }
     componentDidMount(){
         // const { slide } = this.state;
         const need =$('.card')[0];
@@ -92,13 +97,13 @@ export default class Service extends Component {
                     style={{backgroundImage: `url(/src/services/${item.img})`}}
                     key={index}
                     onClick={()=>{
-                        history.push(`/service/${index}`)
+                        history.push(`/service/${item.id}`)
                     }}
                     onMouseEnter={()=>{
                         this.onOver(index);
                     }}
                     onMouseLeave={()=>{
-                        this.onLeave();
+                        // this.onLeave();
                     }}
                 >
                     <h3>{item.title}</h3>
