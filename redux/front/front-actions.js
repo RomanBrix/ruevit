@@ -567,6 +567,7 @@ export function langFunc(type, lang) {
                 // console.log('cooooo ', cookie);
                 // console.log(cookie >= 2);
                 if(cookie && cookie.length >= 2){
+
                     return cookie;
                 }else{
                     return 'default';
