@@ -1,6 +1,10 @@
 import React, {Component} from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import logo from '../../src/logo.svg';
+import logo_eng from '../../src/logo.svg';
+import logo_ua from '../../src/logo.svg';
+
+
 import $ from "jquery";
 
 export default class Header extends Component {
@@ -9,15 +13,16 @@ export default class Header extends Component {
         if(id==="adv"){
             time = 600;
         }
-        console.log(id);
+        // console.log(id);
         $('html, body').animate({
             scrollTop: ($(`#${id}`).offset().top)
         }, time);
     }
     render() {
-        const { contacts, history } = this.props;
+        const { contacts, history, langFunc, lang, translate } = this.props;
+        let activeLang = translate.langName;
+        const headerTranslate = translate.mainPage.header;
 
-        // console.log(this.props);
         return (
             <div className="header">
                 <div className="logo">
@@ -32,28 +37,53 @@ export default class Header extends Component {
                         <li onClick={()=>{
                             // this.scrollTo('adv')
                             history.push('/about');
-                        }}>О нас</li>
+                        }}>
+                            {headerTranslate.about}
+                        </li>
 
                         <li onClick={()=>{
                             this.scrollTo('service')
-                        }}>Услуги</li>
+                        }}>
+                            {headerTranslate.service}
+                        </li>
 
                         <li onClick={()=>{
                             this.scrollTo('gallery')
-                        }}>Галерея</li>
+                        }}>
+                            {headerTranslate.gallery}
+                        </li>
 
-                        <li onClick={()=>{
-                            this.scrollTo('news')
-                        }}>Новости</li>
+                        {/*<li onClick={()=>{*/}
+                            {/*this.scrollTo('news')*/}
+                        {/*}}>Новости</li>*/}
 
                         <li onClick={()=>{
                             this.scrollTo('contact')
-                        }}>Контакты</li>
+                        }}>
+                            {headerTranslate.contacts}
+                        </li>
 
                     </ul>
                 </div>
                 <div className="socials">
                     <ul>
+                       <li className='langList'>
+                        {
+                            activeLang
+                        }
+                        <ol className='lang'>
+                            <li onClick={()=>{
+                                langFunc('set', 'ua');
+                            }}>UA</li>
+                            <li onClick={()=>{
+                                langFunc('set', 'rus');
+                            }}>RUS</li>
+                            <li onClick={()=>{
+                                langFunc('set', 'eng');
+                                // langFunc('')
+                            }}>ENG</li>
+                        </ol>
+                       </li>
                         {/*<li className={'inst'} onClick={()=>{*/}
                             {/*window.open(`${contacts.insta}`);*/}
                         {/*}}><i className={'icon-instagram'}/></li>*/}

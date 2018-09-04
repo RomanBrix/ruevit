@@ -19,19 +19,19 @@ export default class MainPage extends Component {
         // console.log('unm');
     }
     render() {
-        const { contacts, history, frontRedux } = this.props;
-        const { fastCall, contactForm } = this.props;
+        const { contacts, history, frontRedux, langFunc, contactForm, fastCall, translate } = this.props;
+        // const { fastCall, contactForm } = this.props;
         return(
             <div className="main-page">
-                <Header contacts={ contacts.socials }  history={history}/>
-                <Intro slider={frontRedux.slider} fastCall={fastCall}/>
+                <Header contacts={ contacts.socials }  history={history} langFunc={langFunc} lang={frontRedux.lang} translate={translate}/>
+                <Intro slider={frontRedux.slider} fastCall={fastCall} translate={translate.mainPage.intro}/>
                 {/*<Adv advs={frontRedux.advs} history={history} />*/}
                 <AdvV2 history={history} advs={frontRedux.advs}/>
                 {/*<Video/>*/}
                 <Service history={history} services={frontRedux.services}/>
-                <Gallery history={history} photosToPreview={frontRedux.photosToAlbum}/>
+                <Gallery history={history} photosToPreview={frontRedux.photosToAlbum} translate={translate.mainPage.gallery}/>
                 {/*<News history={history} news={frontRedux.news}/>*/}
-                <Contact contacts={contacts} contactForm={contactForm} />
+                <Contact contacts={contacts} contactForm={contactForm} translate={translate.mainPage.contacts}/>
             </div>
         )
     }

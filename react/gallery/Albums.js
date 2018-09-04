@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 
 export default class Albums extends Component {
     render() {
-        const { albums, photosToAlbum } = this.props.frontRedux;
+        const { albums, photosToAlbum,  } = this.props.frontRedux;
+        const { translate } = this.props;
         const albom_container = albums.map((item, index)=>{
             let srcOfBg = '';
             let i = 0;
@@ -34,12 +35,13 @@ export default class Albums extends Component {
                 </div>
             )
         });
+        console.log(translate);
         return (
             <div className="big-gallery" style={{
                 backgroundImage: `url(/src/shevron.svg)`
             }}>
                 <div className="gallery-head">
-                    <h2 className={`with-left-stroke`}>Все альбомы</h2>
+                    <h2 className={`with-left-stroke`}>{translate.albmHead}</h2>
                     <i className='icon-cancel' onClick={()=>{
                         this.props.history.push('/')
                     }}/>

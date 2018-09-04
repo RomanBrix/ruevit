@@ -11,7 +11,9 @@ export const front = {
     GET_SLIDES: 'GET_SLIDES',
     GET_ALL_IMG: 'ALB_AND_PHOTOS',
     GET_ALL_NEWS: 'GET_NEWS',
-    GET_ALL_ADV_SERV: 'HELLO_MY_NAME_IS_ROMA'
+    GET_ALL_ADV_SERV: 'HELLO_MY_NAME_IS_ROMA',
+    SET_LANG: 'NY_PRIVET',
+    GET_LANG: 'NY_POKA'
 };
 
 export const UploadSlider = `http://learn.warp.com.ua/upload.php`;

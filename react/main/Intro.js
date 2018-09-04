@@ -108,7 +108,7 @@ export default class Intro extends Component {
         const { imgs } = this.state;
         const imgReturn = [];
         const settingReturn = [];
-        const { fastCall } = this.props;
+        const { fastCall, translate } = this.props;
         imgs.map((item, index)=>{
             imgReturn.push(<div style={{backgroundImage: `url(src/slider/${item.img})`}}  className={`slides`} id={`slide-${index+1}`} key={index}/>);
                 settingReturn.push(<div className="set" key={index} onClick={()=>{
@@ -133,7 +133,7 @@ export default class Intro extends Component {
                 </div>
                 <div className="intro-text">
                     {/*<h1>Безопасность в любой ситуации.</h1>*/}
-                    <p>Невооруженный человек может лишь убегать от зла, но зло не побеждают, бежавши от него</p>
+                    <p>{translate.text}</p>
                     <div className="btn" onClick={()=>{
                         let phone = '';
 
@@ -145,7 +145,7 @@ export default class Intro extends Component {
                         if(phone !== null) {
                             fastCall('fastCall', phone);
                         }
-                    }}>Заказать звонок</div>
+                    }}>{translate.btn}</div>
                 </div>
                     <svg className="arrows" onClick={()=>{
                         $('html, body').animate({

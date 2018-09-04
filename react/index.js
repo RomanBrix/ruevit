@@ -20,7 +20,8 @@ import {
     deleteNews,
     changeNews,
     getAdvServ,
-    changeAdvServ
+    changeAdvServ,
+    langFunc
 } from "../redux/front/front-actions";
 import App from "./App";
 
@@ -52,5 +53,6 @@ export default connect(
         deleteNews,
         changeNews,
         getAdvServ,
-        changeAdvServ
+        changeAdvServ,
+        langFunc
     })(App);

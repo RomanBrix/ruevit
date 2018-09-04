@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import allLanguage from './language';
 import { contacts } from './URLS';
 import $ from 'jquery'
 import RenderRouter from './RenderRouter';
@@ -29,18 +30,10 @@ export default class App extends Component {
         props.getAlbAndPhotos('get_alb_and_photo');
         // props.getNews('get_news');
         props.getAdvServ('get_adv_serv');
+        props.langFunc('get');
+
     }
 
-    componentDidMount(){
-        // $('body').toggleClass('stop-body');
-        // const body  = document.getElementsByTagName('BODY');
-        // document.body.classList.add('stop-body');
-
-        // setTimeout(()=>{
-        //     $('.loader').fadeToggle();
-        //     document.body.classList.remove('stop-body');
-        // }, 1200);
-    }
     render() {
         const {
             fastCall,
@@ -62,13 +55,27 @@ export default class App extends Component {
             getNews,
             changeNews,
             getAdvServ,
-            changeAdvServ
+            changeAdvServ,
+            langFunc
         } = this.props;
-
         const frontRedux = this.props.front.toJS();
-        // const { auth } = frontRedux;
-        // console.log(auth);
-        // console.log(frontRedux.news);
+        // const { lang } = frontRedux;
+        // console.log("lang is: ", lang);
+        // console.log(allLanguage);
+        //check language
+        //
+        let lenguageWhichIneed = allLanguage[0];
+
+        for (let i = 0; i < allLanguage.length; i++ ){
+            if(allLanguage[i].langName === frontRedux.lang){
+                lenguageWhichIneed = allLanguage[i];
+            }
+        }
+        console.log(lenguageWhichIneed);
+
+
+
+
         return (
             <Router>
                 <RenderRouter>
@@ -101,8 +108,10 @@ export default class App extends Component {
                         <Route exact path="/" render={(props)=><MainPage
                             frontRedux={frontRedux}
                             contacts={contacts}
+                            translate={lenguageWhichIneed}
                             fastCall={fastCall}
                             contactForm={contactForm}
+                            langFunc={langFunc}
                             {...props}/>}
                         />
                         <Route exact path="/about" render={(props)=><About frontRedux={frontRedux} contacts={contacts} {...props}/>}/>
@@ -110,7 +119,7 @@ export default class App extends Component {
                         <Route path="/adv/:position" render={(props)=><Adv advs={frontRedux.advs} {...props}/>}/>
                         <Route path="/service/:position" render={(props)=><Service srvs={frontRedux.services} {...props}/>}/>
                         <Switch>
-                            <Route exact path="/gallery" render={(props)=><Albums frontRedux={frontRedux} {...props}/>}/>
+                            <Route exact path="/gallery" render={(props)=><Albums frontRedux={frontRedux} translate={lenguageWhichIneed.mainPage.gallery}{...props}/>}/>
                             <Route path="/gallery/:id-:pos" render={(props)=><Gallery frontRedux={frontRedux} {...props}/>}/>
                             {/*<Route path="*" component={NotFound}/>*/}
                             <Route exact path="/news" render={(props)=><News news={frontRedux.news} {...props}/>}/>

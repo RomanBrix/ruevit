@@ -6,7 +6,7 @@ export default class Contact extends Component {
         return re.test(email);
     }
     render() {
-        const { contacts, contactForm } = this.props;
+        const { contacts, contactForm, translate } = this.props;
 
         return (
             <div className="contact" id={`contact`}>
@@ -17,8 +17,8 @@ export default class Contact extends Component {
                 {/*</div>*/}
                 <div className="info">
                     <div className="text">
-                        <h2 className={`with-left-stroke`}>Контакты</h2>
-                        <p>Наша команда работает 24/7 и всегда готова ответить и помочь вам!</p>
+                        <h2 className={`with-left-stroke`}>{ translate.head }</h2>
+                        <p>{ translate.text }</p>
                         <div className="contact-socials">
                             <ul>
                                 {/*<li className={'inst'} onClick={()=>{*/}
@@ -47,24 +47,24 @@ export default class Contact extends Component {
                     <div className="form">
                         <div className="form-container">
                             <div className="left">
-                            <span className={`name`}>Имя</span>
+                            <span className={`name`}>{translate.nameHolder}</span>
                             <input type="text" id={'name'}  ref={`name`}/>
 
                             <span className={`mail`}>Email</span>
                             <input type="mail" id={'mail'}  ref={'mail'}/>
 
-                            <span className={`tel`}>Телефон</span>
+                            <span className={`tel`}>{translate.telHolder}</span>
                             <input type="number" id={'tel'}  ref={`tel`}/>
                             </div>
                             {/*<span className="msg">Message</span>*/}
                             <div className="right">
-                                <textarea name="msg" id="msg" placeholder={`Сообщение`} ref={`msg`}/>
+                                <textarea name="msg" id="msg" placeholder={translate.msgHolder} ref={`msg`}/>
                             </div>
                         </div>
                         <div className="btn" onClick={()=>{
                             const { name, mail, tel, msg } = this.refs;
                             contactForm('contactForm',name,tel, mail,msg);
-                        }}>Отправить</div>
+                        }}>{translate.btn}</div>
                     </div>
                 </div>
             </div>

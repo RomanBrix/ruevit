@@ -8,6 +8,34 @@ function getCookie(name) {
     ));
     return matches ? decodeURIComponent(matches[1]) : undefined;
 }
+function setCookie(name, value, options) {
+    options = options || {};
+
+    let expires = options.expires;
+
+    if (typeof expires === "number" && expires) {
+        let d = new Date();
+        d.setTime(d.getTime() + expires * 1000);
+        expires = options.expires = d;
+    }
+    if (expires && expires.toUTCString) {
+        options.expires = expires.toUTCString();
+    }
+
+    value = encodeURIComponent(value);
+
+    let updatedCookie = name + "=" + value;
+
+    for (let propName in options) {
+        updatedCookie += "; " + propName;
+        let propValue = options[propName];
+        if (propValue !== true) {
+            updatedCookie += "=" + propValue;
+        }
+    }
+
+    document.cookie = updatedCookie;
+}
 
 
 export function fastCall(type,phone) {
@@ -525,5 +553,43 @@ export function changeAdvServ(type, id, title, content, fn) {
             .catch((error) => {
                 console.log(error);
             });
+    }
+}
+
+
+
+export function langFunc(type, lang) {
+    return dispatch =>{
+        if(type === 'get'){
+
+            const getLang = (()=>{
+                let cookie = getCookie('lang');
+                // console.log('cooooo ', cookie);
+                // console.log(cookie >= 2);
+                if(cookie && cookie.length >= 2){
+                    return cookie;
+                }else{
+                    return 'default';
+                }
+            })();
+
+            console.log('getlang: ', getLang);
+            // if(getLang !== 'default') {
+                dispatch({
+                    type: front.GET_LANG,
+                    language: getLang
+                })
+            // }
+        }else if(type === 'set') {
+
+            setCookie('lang', lang, {
+                path: '/',
+                expires: 240
+            });
+            dispatch({
+                type:front.SET_LANG,
+                language: lang
+            })
+        }
     }
 }

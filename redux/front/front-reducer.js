@@ -10,6 +10,7 @@ const hashOfUsr = getCookie('hash');
 const InitialState = Immutable.fromJS({
     request: false,
     auth: hashOfUsr !== undefined && hashOfUsr.length > 19,
+    lang: 'ru',
     // photosToAlbum: ['image.png','ph1.png','ph3.png','ph2.png','ph3.png','image.png','ph1.png','ph3.png','ph2.png','image.png','ph1.png','ph3.png','ph2.png','image.png','ph1.png','ph3.png','ph2.png','image.png','ph1.png','ph3.png','ph2.png','image.png','ph1.png','ph3.png','ph2.png','image.png','ph1.png','ph3.png','ph2.png','image.png','ph1.png','ph3.png','ph2.png'],
     albums: [
         {
@@ -179,7 +180,14 @@ const frontReducer = (state = InitialState, action) => {
             return state.set('news', action.news).set('request', false);
         case front.GET_ALL_ADV_SERV:
             return state.set('advs', action.adv).set('services', action.serv).set('request', false);
-
+        case front.GET_LANG:
+            if(action.language !== 'default') {
+                return state.set('lang', action.language).set('request', false);
+            }else{
+                return state.set('request', false);
+            }
+        case front.SET_LANG:
+            return state.set('lang', action.language).set('request', false);
 
 
         default: return state;

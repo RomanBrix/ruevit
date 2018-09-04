@@ -1,0 +1,100 @@
+[
+  {
+    "langName":"ru",
+    "mainPage":{
+      "header":{
+        "about": "О нас",
+        "service": "Услуги",
+        "gallery": "Галерея",
+        "contacts": "Контакты"
+      },
+      "intro": {
+        "text":"Невооруженный человек может лишь убегать от зла, но зло не побеждают, бежавши от него",
+        "btn":"Заказать звонок"
+      },
+
+      "gallery":{
+        "mainHead": "Галерея снимков",
+        "btn": "Смотреть все",
+        "albmHead":"Все альбомы"
+      },
+
+
+      "contacts":{
+        "head":"Конткаты",
+        "text":"Наша команда работает 24/7 и всегда готова ответить и помочь вам!",
+        "nameHolder":"Имя",
+        "telHolder":"Телефон",
+        "msgHolder":"Сообщение",
+        "btn":"Отправить"
+      }
+    }
+  },
+  {
+    "langName":"ua",
+    "mainPage":{
+
+      "header":{
+        "about": "Про нас",
+        "service": "Послуги",
+        "gallery": "Галерея",
+        "contacts": "Контакти"
+      },
+
+      "intro": {
+        "text":"Неозброєна людина може лише тікати від зла, проте зло не перемагають, тікаючи від нього",
+        "btn":"Замовити дзвінок"
+      },
+
+      "gallery":{
+        "mainHead": "Галерея знімків",
+        "btn": "Дивитись всі",
+        "albmHead":"Всі альбоми"
+      },
+
+
+      "contacts":{
+        "head":"Контакти ",
+        "text":"Наша команда працює 24/7 і завжди готова відповісти і допомогти вам!",
+        "nameHolder":"Ім’я",
+        "telHolder":"Телефон ",
+        "msgHolder":"Повідомлення ",
+        "btn":"Надіслати "
+      }
+
+    }
+  },
+  {
+    "langName":"eng",
+    "mainPage":{
+
+      "header":{
+        "about": "About us",
+        "service": "Services",
+        "gallery": "Gallery",
+        "contacts": "Contacts"
+      },
+
+      "intro": {
+        "text":"An unarmed person can only escape from evil, but evil can’t be defeated by running away from him",
+        "btn":"Request a call"
+      },
+
+      "gallery":{
+        "mainHead": "Photo gallery",
+        "btn": "See all",
+        "albmHead":"All albums"
+      },
+
+
+      "contacts":{
+          "head":"Contacts",
+        "text":"Our team works 24/7 and is always ready to answer and help you!",
+        "nameHolder":"Name",
+        "telHolder":"Phone number",
+        "msgHolder":"Massage",
+        "btn":"Send"
+      }
+    }
+  }
+]

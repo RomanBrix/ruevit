@@ -94,7 +94,7 @@ export default class Gallery extends Component {
     };
 
     render() {
-        const { history } = this.props;
+        const { history, translate } = this.props;
         const { imgs } = this.state;
         const imgContainer = imgs.map((item, index)=>{
             return (
@@ -120,10 +120,10 @@ export default class Gallery extends Component {
                      </div>
                  </div>
                 <div className="gallery-head">
-                    <h2 className={`with-left-stroke`}>Галерея снимков</h2>
+                    <h2 className={`with-left-stroke`}>{translate.mainHead}</h2>
                     <div className="btn" onClick={()=>{
                         history.push('/gallery')
-                    }}>Смотреть все</div>
+                    }}>{translate.btn}</div>
                 </div>
                 <div className="gallery-container">
                     { imgContainer }

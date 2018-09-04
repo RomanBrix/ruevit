@@ -16,12 +16,12 @@ export default class About extends Component {
 
                     <h3>В структуру «Руевит» входят следующие подразделения:</h3>
                     <ul>
-                        <li onClick={()=>{ history.push('/service/0')}}>Отдел наземных операций</li>
-                        <li onClick={()=>{ history.push('/service/1')}}>Отдел морских операций</li>
-                        <li onClick={()=>{ history.push('/service/2')}}>Технический отдел</li>
-                        <li onClick={()=>{ history.push('/service/3')}}>Юридический департамент</li>
-                        <li onClick={()=>{ history.push('/service/4')}}>Отдел специальных операций</li>
-                        <li onClick={()=>{ history.push('/service/5')}}>Отдел аналитики</li>
+                        <li onClick={()=>{ history.push('/service/1')}}>Отдел наземных операций</li>
+                        <li onClick={()=>{ history.push('/service/2')}}>Отдел морских операций</li>
+                        <li onClick={()=>{ history.push('/service/3')}}>Технический отдел</li>
+                        {/*<li onClick={()=>{ history.push('/service/4')}}>Юридический департамент</li>*/}
+                        <li onClick={()=>{ history.push('/service/5')}}>Отдел специальных операций</li>
+                        <li onClick={()=>{ history.push('/service/6')}}>Отдел аналитики</li>
                     </ul>
 
                     <h3>Нашими клиентами являются:</h3>
@@ -52,8 +52,6 @@ export default class About extends Component {
                         <li>Сбор информации, внедрение, вербовка</li>
                         <li>Выявление угроз, определение их степени и разработка пошагового плана мероприятия по их нейтрализации</li>
                         <li>Техническое обслуживание бронетехники и воздушного транспорта</li>
-                        <li>Юридическое сопровождение</li>
-                        <li>Независимый аудит</li>
                     </ul>
                     <p><span className="padding">Учитывая</span> сложную ситуацию в стране, мы работаем в режиме 24/7, что позволяет оперативно реагировать на проблемы наших клиентов</p>
                     <p><b>Связаться с нами можно посредством специальной формы на сайте</b></p>
