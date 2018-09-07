@@ -530,14 +530,23 @@ export function getAdvServ(type) {
     }
 }
 
-export function changeAdvServ(type, id, title, content, fn) {
+export function changeAdvServ(type, lang, id, title, content, fn) {
     return dispatch =>{
         dispatch({type:front.REQUEST,});
         // console.log(id, title, date, desc);
+        console.log('content: ');
         console.log(content);
-        axios.post(`${URL_POST}`,{ type, id, title, content})
+        console.log(typeof content);
+
+        axios.post(`${URL_POST}`,{ type, lang, id, title, content})
             .then((res) => {
                 console.log(res);
+                if(res.data !== true) {
+                    const err = res.data.split(';');
+                    if(err[0] === 'You have an error in your SQL syntax') {
+                        alert('Невозможно сохранить, проверьте текст на наличие следующих знаков и уберите их: "", \'\',«»,\'');
+                    }
+                }
 
                 if(res.data === true ) {
                     fn(true);

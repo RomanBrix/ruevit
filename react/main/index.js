@@ -26,9 +26,9 @@ export default class MainPage extends Component {
                 <Header contacts={ contacts.socials }  history={history} langFunc={langFunc} lang={frontRedux.lang} translate={translate}/>
                 <Intro slider={frontRedux.slider} fastCall={fastCall} translate={translate.mainPage.intro}/>
                 {/*<Adv advs={frontRedux.advs} history={history} />*/}
-                <AdvV2 history={history} advs={frontRedux.advs}/>
+                <AdvV2 history={history} advs={frontRedux.advs} lang={frontRedux.lang} translate={translate.mainPage.advs}/>
                 {/*<Video/>*/}
-                <Service history={history} services={frontRedux.services}/>
+                <Service history={history} services={frontRedux.services} lang={frontRedux.lang} translate={translate.mainPage.serv}/>
                 <Gallery history={history} photosToPreview={frontRedux.photosToAlbum} translate={translate.mainPage.gallery}/>
                 {/*<News history={history} news={frontRedux.news}/>*/}
                 <Contact contacts={contacts} contactForm={contactForm} translate={translate.mainPage.contacts}/>

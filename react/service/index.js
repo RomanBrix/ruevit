@@ -11,28 +11,30 @@ import ReadableDraftJs from "../layouts/ReadableDraftJs";
 
 
 export default class Service extends Component {
-    getContainer(position){
-        switch (+position){
-            case 0:
-                return <Zemlya/>;
-            case 1:
-                return <More/>;
-            case 2:
-                return <TehOtdel/>;
-            case 3:
-                return <YurOtdel/>;
-            case 4:
-                return <SWAT/>;
-            case 5:
-                return <Anal/>;
-            default:
-                return <NotFound/>
-        }
-    }
+    // getContainer(position){
+    //     switch (+position){
+    //         case 0:
+    //             return <Zemlya/>;
+    //         case 1:
+    //             return <More/>;
+    //         case 2:
+    //             return <TehOtdel/>;
+    //         case 3:
+    //             return <YurOtdel/>;
+    //         case 4:
+    //             return <SWAT/>;
+    //         case 5:
+    //             return <Anal/>;
+    //         default:
+    //             return <NotFound/>
+    //     }
+    // }
     render() {
-        const { srvs, history, match } = this.props;
+        const { srvs, history, match, frontRedux } = this.props;
         const needId = match.params.position;
         let ourSrv = {};
+        let ourSrvContent = '';
+        let ourSrvTitle = '';
         // const Serv = frontRedux.services[position];
 
 
@@ -44,15 +46,35 @@ export default class Service extends Component {
                 break;
             }
         }
+
+        switch (frontRedux.lang){
+            case 'rus':
+                ourSrvContent = ourSrv.content;
+                ourSrvTitle = ourSrv.title;
+                break;
+            case 'ua':
+                ourSrvContent = ourSrv.contentUa;
+                ourSrvTitle = ourSrv.titleUa;
+                break;
+
+            case 'eng':
+                ourSrvContent = ourSrv.contentEng;
+                ourSrvTitle = ourSrv.titleEng;
+                break;
+            default:
+                ourSrvContent = ourSrv.content;
+                ourSrvTitle = ourSrv.title;
+                break;
+        }
         return (
             <div className="big-service">
                 <div className="serv-header">
-                    <h1>{ourSrv.title}</h1>
+                    <h1>{ourSrvTitle}</h1>
                     <i className='icon-angle-circled-left' onClick={()=>{ history.push('/')}}/>
                 </div>
                 {/*{container}*/}
                 <div className="serv-container">
-                    <ReadableDraftJs content={ourSrv.content}/>
+                    <ReadableDraftJs content={ourSrvContent}/>
                 </div>
             </div>
         )

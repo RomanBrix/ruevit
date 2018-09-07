@@ -3,6 +3,9 @@ import { NavLink, Link } from 'react-router-dom';
 import logo from '../../src/logo.svg';
 import logo_eng from '../../src/logo.svg';
 import logo_ua from '../../src/logo.svg';
+import lang_ua from '../../src/ua.svg';
+import lang_rus from '../../src/rus.svg';
+import lang_eng from '../../src/eng.svg';
 
 
 import $ from "jquery";
@@ -20,9 +23,30 @@ export default class Header extends Component {
     }
     render() {
         const { contacts, history, langFunc, lang, translate } = this.props;
-        let activeLang = translate.langName;
-        const headerTranslate = translate.mainPage.header;
+        let activeLang = <span>
+                    Язык: <img src={lang_rus} alt=""/>
+                </span>;;
 
+        const headerTranslate = translate.mainPage.header;
+        switch (lang){
+            case 'rus':
+                activeLang = <span>
+                    Язык: <img src={lang_rus} alt=""/>
+                </span>;
+                break;
+
+            case 'ua':
+                activeLang = <span>
+                    Мова: <img src={lang_ua} alt=""/>
+                </span>;
+                break;
+
+            case 'eng':
+                activeLang = <span>
+                    Language: <img src={lang_eng} alt=""/>
+                </span>;
+                break;
+        }
         return (
             <div className="header">
                 <div className="logo">
@@ -68,20 +92,27 @@ export default class Header extends Component {
                 <div className="socials">
                     <ul>
                        <li className='langList'>
-                        {
+
+                           {
                             activeLang
-                        }
+                           }
                         <ol className='lang'>
                             <li onClick={()=>{
                                 langFunc('set', 'ua');
-                            }}>UA</li>
+                            }}>
+                                <img src={lang_ua} alt=""/>
+                            </li>
                             <li onClick={()=>{
                                 langFunc('set', 'rus');
-                            }}>RUS</li>
+                            }}>
+                                <img src={lang_rus} alt=""/>
+                            </li>
                             <li onClick={()=>{
                                 langFunc('set', 'eng');
                                 // langFunc('')
-                            }}>ENG</li>
+                            }}>
+                                <img src={lang_eng} alt=""/>
+                            </li>
                         </ol>
                        </li>
                         {/*<li className={'inst'} onClick={()=>{*/}

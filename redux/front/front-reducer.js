@@ -10,6 +10,7 @@ const hashOfUsr = getCookie('hash');
 const InitialState = Immutable.fromJS({
     request: false,
     auth: hashOfUsr !== undefined && hashOfUsr.length > 19,
+    // auth: true,
     lang: 'ru',
     // photosToAlbum: ['image.png','ph1.png','ph3.png','ph2.png','ph3.png','image.png','ph1.png','ph3.png','ph2.png','image.png','ph1.png','ph3.png','ph2.png','image.png','ph1.png','ph3.png','ph2.png','image.png','ph1.png','ph3.png','ph2.png','image.png','ph1.png','ph3.png','ph2.png','image.png','ph1.png','ph3.png','ph2.png','image.png','ph1.png','ph3.png','ph2.png'],
     albums: [
@@ -50,36 +51,60 @@ const InitialState = Immutable.fromJS({
             id:1,
             title: 'Отдел наземных операций',
             content: '',
+            titleEng: 'Zemlya',
+            contentEng: '',
+            titleUa: 'Ненька',
+            contentUa: '',
             img: 'zemlya.png'
         },
         {
             id:2,
             title: 'Отдел морских операций',
             content: '',
+            titleEng: '',
+            contentEng: '',
+            titleUa: '',
+            contentUa: '',
             img: 'image2.png'
         },
         {
             id:3,
             title: 'Технический отдел',
             content: '',
+            titleEng: '',
+            contentEng: '',
+            titleUa: '',
+            contentUa: '',
             img: 'teh.jpg'
         },
         {
             id:4,
             title: 'Юридический отдел',
             content: '',
+            titleEng: '',
+            contentEng: '',
+            titleUa: '',
+            contentUa: '',
             img: 'yur.jpg'
         },
         {
             id:5,
             title: 'Отдел специальных операций',
             content: '',
+            titleEng: '',
+            contentEng: '',
+            titleUa: '',
+            contentUa: '',
             img: 'image.png'
         },
         {
             id:6,
             title: 'Отдел аналитики',
             content: '',
+            titleEng: '',
+            contentEng: '',
+            titleUa: '',
+            contentUa: '',
             img: 'anal.jpg'
         },
     ],
@@ -88,36 +113,60 @@ const InitialState = Immutable.fromJS({
             id: 1,
             title: '',
             content: '',
+            titleEng: '',
+            contentEng: '',
+            titleUa: '',
+            contentUa: ''
             // img: 'image.png'
         },
         {
             id:2,
             title: 'Работа 24 на 7',
             content: '',
+            titleEng: 'Work 24/7',
+            contentEng: '',
+            titleUa: 'ПРАЦЯ',
+            contentUa: ''
             // img: 'ph1.png'
         },
         {
             id:3,
             title: 'Сотрудники с опытом',
             content: '',
+            titleEng: '',
+            contentEng: '',
+            titleUa: '',
+            contentUa: ''
             // img: 'ph2.png'
         },
         {
             id:4,
             title: 'Cовременная система управления операциями',
             content: '',
+            titleEng: '',
+            contentEng: '',
+            titleUa: '',
+            contentUa: ''
             // img: 'ph3.png'
         },
         {
             id:5,
             title: 'Оказание услуг в любой точке мира',
             content: '',
+            titleEng: '',
+            contentEng: '',
+            titleUa: '',
+            contentUa: ''
             // img: 'image.png'
         },
         {
             id:6,
             title: 'Ответственность за объекты и грузы',
             content: '',
+            titleEng: '',
+            contentEng: '',
+            titleUa: '',
+            contentUa: ''
             // img: 'image.png'
         },
         {
@@ -130,6 +179,10 @@ const InitialState = Immutable.fromJS({
             id:8,
             title: 'Современное техническое оборудование',
             content: '',
+            titleEng: '',
+            contentEng: '',
+            titleUa: '',
+            contentUa: ''
             // img: 'image.png'
         },
     ],

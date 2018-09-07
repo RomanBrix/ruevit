@@ -91,12 +91,18 @@
             padding: 0;
           }
         }
+
         ol{
           list-style: none;
           padding: 0;
           margin: 0;
           //position: relative;
-          display: none;
+          //display: none;
+
+          opacity: 0;
+          transition: .25s;
+          display: flex;
+
           position: absolute;
           //width: 120px;
           //top: 37px;
@@ -122,15 +128,49 @@
             color: white;
             //background-color: red;
             text-decoration: none;
+            img{
+              transition: .25s;
+            }
             &:hover{
-              transform: scale(1.1);
+              transform: scale(1);
+              img{
+                transform: scale(1.1);
+              }
+            }
+
+            img{
+              width: 30px;
+              height: 30px;
             }
           }
         }
         cursor: pointer;
         &:hover{
           ol {
-            display: flex;
+            //display: flex;
+            opacity: 1;
+            //transform: ;
+          }
+          transform: scale(1);
+        }
+      }
+
+      .langList{
+        span{
+          transition: .25s;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: .9em;
+          img{
+            width: 35px;
+            height: 35px;
+            margin-left: 10px;
+          }
+        }
+        &:hover{
+          span {
+            color: white;
           }
         }
       }

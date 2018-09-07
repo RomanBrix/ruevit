@@ -89,31 +89,92 @@ export default class Service extends Component {
     render() {
         // /src/services/
         const { srvs } = this.state;
-        const { history } = this.props;
+        const { history, lang, translate } = this.props;
         const servContainer = srvs.map((item, index)=>{
-            return (
-                <div
-                    className={`card`}
-                    style={{backgroundImage: `url(/src/services/${item.img})`}}
-                    key={index}
-                    onClick={()=>{
-                        history.push(`/service/${item.id}`)
-                    }}
-                    onMouseEnter={()=>{
-                        this.onOver(index);
-                    }}
-                    onMouseLeave={()=>{
-                        // this.onLeave();
-                    }}
-                >
-                    <h3>{item.title}</h3>
-                </div>
-            )
+            switch (lang){
+                case 'rus':
+                    return (
+                        <div
+                            className={`card`}
+                            style={{backgroundImage: `url(/src/services/${item.img})`}}
+                            key={index}
+                            onClick={()=>{
+                                history.push(`/service/${item.id}`)
+                            }}
+                            onMouseEnter={()=>{
+                                this.onOver(index);
+                            }}
+                            onMouseLeave={()=>{
+                                // this.onLeave();
+                            }}
+                        >
+                            <h3>{item.title}</h3>
+                        </div>
+                    );
+                case 'ua':
+                    return (
+                        <div
+                            className={`card`}
+                            style={{backgroundImage: `url(/src/services/${item.img})`}}
+                            key={index}
+                            onClick={()=>{
+                                history.push(`/service/${item.id}`)
+                            }}
+                            onMouseEnter={()=>{
+                                this.onOver(index);
+                            }}
+                            onMouseLeave={()=>{
+                                // this.onLeave();
+                            }}
+                        >
+                            <h3>{item.titleUa}</h3>
+                        </div>
+                    );
+                case 'eng':
+                    return (
+                        <div
+                            className={`card`}
+                            style={{backgroundImage: `url(/src/services/${item.img})`}}
+                            key={index}
+                            onClick={()=>{
+                                history.push(`/service/${item.id}`)
+                            }}
+                            onMouseEnter={()=>{
+                                this.onOver(index);
+                            }}
+                            onMouseLeave={()=>{
+                                // this.onLeave();
+                            }}
+                        >
+                            <h3>{item.titleEng}</h3>
+                        </div>
+                    );
+                default:
+                    return (
+                        <div
+                            className={`card`}
+                            style={{backgroundImage: `url(/src/services/${item.img})`}}
+                            key={index}
+                            onClick={()=>{
+                                history.push(`/service/${item.id}`)
+                            }}
+                            onMouseEnter={()=>{
+                                this.onOver(index);
+                            }}
+                            onMouseLeave={()=>{
+                                // this.onLeave();
+                            }}
+                        >
+                            <h3>{item.title}</h3>
+                        </div>
+                    );
+            }
+
         });
         return (
             <div className="service" id={`service`}>
                 <div className="title">
-                    <h2 className={`with-left-stroke`}>Наши Услуги</h2>
+                    <h2 className={`with-left-stroke`}>{translate.head}</h2>
                     {/*<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, inventore nisi. Amet eligendi et modi quibusdam sequi? Accusamus at cupiditate delectus dolore eveniet, illo, molestias nemo quae quibusdam soluta vitae!</p>*/}
                 </div>
                 <div id="bigImg" style={{backgroundImage: `url(/src/services/${srvs[0].img})`}}/>

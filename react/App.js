@@ -65,13 +65,14 @@ export default class App extends Component {
         //check language
         //
         let lenguageWhichIneed = allLanguage[0];
+        // console.log(lenguageWhichIneed);
 
         for (let i = 0; i < allLanguage.length; i++ ){
             if(allLanguage[i].langName === frontRedux.lang){
                 lenguageWhichIneed = allLanguage[i];
             }
         }
-        console.log(lenguageWhichIneed);
+        // console.log(lenguageWhichIneed);
 
 
 
@@ -114,10 +115,10 @@ export default class App extends Component {
                             langFunc={langFunc}
                             {...props}/>}
                         />
-                        <Route exact path="/about" render={(props)=><About frontRedux={frontRedux} contacts={contacts} {...props}/>}/>
+                        <Route exact path="/about" render={(props)=><About frontRedux={frontRedux} contacts={contacts} translate={lenguageWhichIneed.about}{...props}/>}/>
 
-                        <Route path="/adv/:position" render={(props)=><Adv advs={frontRedux.advs} {...props}/>}/>
-                        <Route path="/service/:position" render={(props)=><Service srvs={frontRedux.services} {...props}/>}/>
+                        <Route path="/adv/:position" render={(props)=><Adv advs={frontRedux.advs} frontRedux={frontRedux} {...props}/>}/>
+                        <Route path="/service/:position" render={(props)=><Service srvs={frontRedux.services} frontRedux={frontRedux} {...props}/>}/>
                         <Switch>
                             <Route exact path="/gallery" render={(props)=><Albums frontRedux={frontRedux} translate={lenguageWhichIneed.mainPage.gallery}{...props}/>}/>
                             <Route path="/gallery/:id-:pos" render={(props)=><Gallery frontRedux={frontRedux} {...props}/>}/>

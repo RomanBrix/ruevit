@@ -115,6 +115,7 @@ export default class Admin extends Component {
                         <Route  path="/admin/settings-adv-serv/:type-:id" render={(props)=><ArticleAdvServ
                             {...props}
                             adv={frontRedux.advs}
+                            frontRedux={frontRedux}
                             serv={frontRedux.services}
                             history={history}
                             getAdvServ={getAdvServ}

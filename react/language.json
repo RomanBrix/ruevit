@@ -27,6 +27,59 @@
         "telHolder":"Телефон",
         "msgHolder":"Сообщение",
         "btn":"Отправить"
+      },
+
+      "advs": {
+        "head":"Наши преимущества"
+      },
+      "serv": {
+        "head":"Наши Услуги"
+      }
+    },
+    "about":{
+      "head": "О нас",
+      "container":{
+        "head":"Руевит",
+        "afterHead":"Специализированная организация, деятельность которой направлена на обеспечение личной и объектовой безопасности. На территории Украины компания действует на основании Устава и лицензии МВД об охранной деятельности.",
+        "h3":"В структуру «Руевит» входят следующие подразделения:",
+        "firstUl":[
+          "Отдел наземных операций",
+          "Отдел морских операций",
+          "Технический отдел",
+          "Отдел специальных операций",
+          "Отдел аналитики"
+        ],
+        "h3_2":"Нашими клиентами являются:",
+        "secUl":[
+          "Профессионалы, способные решать многозадачники в любых, самых сложных условиях",
+          "Участники антитеррористической операции на Донбасс",
+          "Сотрудники спецслужб, служившие в горячих точках",
+          "Высококлассные инструктора по безопасности",
+          "Телохранители, работающие с ВИП-персонами",
+          "Юристы и аудиторы",
+          "Аналитики экспертного уровня"
+        ],
+        "textAfterUl":"Все сотрудники прошли специальную психологическую и медицинскую подготовку.",
+        "h3_3":"В зависимости от ситуации, компания «Руевит» готова предоставить следующие услуги:",
+        "thirdUl":[
+          "Охрана стратегически важных объектов (заводы, месторождения, порты)",
+          "Обеспечение порядка при проведении общественных мероприятий",
+          "Предоставление групп быстрого реагирования",
+          "Противодействие рейдерским захватам",
+          "Отражение атак, направленных на захват интеллектуальных или физических активов",
+          "Вооруженное сопровождение ценных грузов",
+          "Военизированный наземный и морской конвой",
+          "Выполнение задач клиента на территориях повешенной опасности",
+          "Личная безопасность",
+          "Скрытая охрана ВИП персон",
+          "Обеспечение безопасности групп на выездных мероприятиях",
+          "Аналитика деятельности организации",
+          "Сбор информации, внедрение, вербовка",
+          "Выявление угроз, определение их степени и разработка пошагового плана мероприятия по их нейтрализации",
+          "Техническое обслуживание бронетехники и воздушного транспорта"
+        ],
+        "textAfterThirdUl":"Учитывая сложную ситуацию в стране, мы работаем в режиме 24/7, что позволяет оперативно реагировать на проблемы наших клиентов",
+        "oneMore": "Связаться с нами можно посредством специальной формы на сайте"
       }
     }
   },
@@ -60,8 +113,62 @@
         "telHolder":"Телефон ",
         "msgHolder":"Повідомлення ",
         "btn":"Надіслати "
+      },
+
+      "advs": {
+        "head":"Наші переваги"
+      },
+
+      "serv": {
+        "head":"Наші послуги"
       }
 
+    },
+    "about":{
+      "head": "Про нас",
+      "container":{
+        "head":"Руєвіт",
+        "afterHead":"Спеціалізована організація, діяльність якої спрямована на забезпечення особистої та об'єктивної безпеки. На території України компанія діє на підставі Статуту та ліцензії МВС про охоронну діяльність.",
+        "h3":"До структури «Руєвіт» входять такі підрозділи:",
+        "firstUl":[
+          "Відділ наземних операцій",
+          "Відділ морських операцій",
+          "Технічний відділ",
+          "Відділ спеціальних операцій",
+          "Відділ аналітики"
+        ],
+        "h3_2":"Нашими клієнтами є:",
+        "secUl":[
+          "Професіонали, здатні вирішувати многозадачники в будь-яких, найскладніших умовах",
+          "Учасники антитерористичної операції на Донбас",
+          "Співробітники спецслужб, що служили в гарячих точках",
+          "Висококласні інструктора з безпеки",
+          "Охоронці, що працюють з ВІП-персонами",
+          "Юристи та аудитори",
+          "Аналітики експертного рівня"
+        ],
+        "textAfterUl":"Всі співробітники пройшли спеціальну психологічну та медичну підготовку.",
+        "h3_3":"Залежно від ситуації, компанія «Руєвіт» готова надати такі послуги:",
+        "thirdUl":[
+          "Охорона стратегічно важливих об'єктів (заводи, родовища, порти)",
+          "Забезпечення порядку при проведенні громадських заходів",
+          "Надання груп швидкого реагування",
+          "Протидія рейдерським захопленням",
+          "Відображення атак, спрямованих на захоплення інтелектуальних або фізичних активів",
+          "Збройне супровід цінних вантажів",
+          "Воєнізований наземний і морський конвой",
+          "Виконання завдань клієнта на територіях підвищеної небезпеки",
+          "Особиста безпека",
+          "Прихована охорона ВІП персон",
+          "Забезпечення безпеки груп на виїзних заходах",
+          "Аналітика діяльності організації",
+          "Збір інформації, впровадження, вербування",
+          "Виявлення загроз, визначення їх ступеня і розробка покрокового плану заходи щодо їх нейтралізаці",
+          "Технічне обслуговування бронетехніки і повітряного транспорту"
+        ],
+        "textAfterThirdUl":"З огляду на складну ситуацію в країні, ми працюємо в режимі 24/7, що дозволяє оперативно реагувати на проблеми наших клієнтів",
+        "oneMore": "Зв'язатися з нами можна за допомогою спеціальної форми на сайті"
+      }
     }
   },
   {
@@ -94,6 +201,59 @@
         "telHolder":"Phone number",
         "msgHolder":"Massage",
         "btn":"Send"
+      },
+
+      "advs": {
+        "head":"Our advantages"
+      },
+      "serv": {
+        "head":"Our services"
+      }
+    },
+    "about":{
+      "head": "About us",
+      "container":{
+        "head":"Ruevit",
+        "afterHead":"It is specialized organization which activities are aimed at providing personal and object security. The company works throughout the territory of Ukraine on the basis of the Charter and a license for security activities of the Ministry of Internal Affairs.",
+        "h3":"The structure of \"Ruevit\" includes the following units:",
+        "firstUl":[
+          "Department of Land Operations",
+          "Department of Maritime Operations",
+          "Technical department",
+          "Special Operations Division",
+          "Analytics Department"
+        ],
+        "h3_2":"Our clients are:",
+        "secUl":[
+          "Professionals that are able to solve multi-tasks in the most difficult conditions",
+          "Participants of the anti-terrorist operation in the Donbas",
+          "Special Service employees who served in hot spots",
+          "Upscale safety instructor",
+          "Bodyguards working with VIPs",
+          "Lawyers and auditors",
+          "Analysts of expert level"
+        ],
+        "textAfterUl":"All employees underwent special psychological and medical training.",
+        "h3_3":"The company provides the following services:",
+        "thirdUl":[
+          "Protection of strategically important facilities (factories, deposits, ports)",
+          "Ensuring order during public events",
+          "Provision of rapid response teams",
+          "Counteraction to raider captures ",
+          "Reflection of attacks aimed at capturing intellectual or physical assets",
+          "Armed escort of valuable cargoes",
+          "Militarized ground and sea convoy",
+          "Performing client tasks in areas of increased danger",
+          "Personal safety",
+          "Hidden protection of VIP persons",
+          "Ensuring the safety of groups at field events",
+          "Analytics of the organization's activities",
+          "Information gathering, implementation, recruitment",
+          "Identify threats, determine their extent and develop a step-by-step plan for neutralizing them",
+          "Maintenance of armored vehicles and air transport"
+        ],
+        "textAfterThirdUl":"We are working in a 24/7 mode, because of the difficult situation in the country. That allows us to react quickly to the problems of our customers",
+        "oneMore": "You can contact us through a special form on the site"
       }
     }
   }

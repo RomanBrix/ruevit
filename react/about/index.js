@@ -2,59 +2,60 @@ import React, {Component} from 'react';
 
 export default class About extends Component {
     render() {
-        const { history } = this.props;
+        const { history, translate} = this.props;
+        const cont = translate.container;
         return (
             <div className="about">
                 {/*<h1>В разработке</h1>*/}
                 <div className="about-header">
-                    <h1>О нас</h1>
+                    <h1>{translate.head}</h1>
                     <i className='icon-cancel' onClick={()=>{ history.push('/')}}/>
                 </div>
                 <div className="about-container">
-                    <h2>Руевит</h2>
-                    <p><span className={`padding`}>Специализированная</span> организация, деятельность которой направлена на обеспечение личной и объектовой безопасности. На территории Украины компания действует на основании Устава и лицензии МВД об охранной деятельности.</p>
+                    <h2>{cont.head}</h2>
+                    <p>{cont.afterHead}</p>
 
-                    <h3>В структуру «Руевит» входят следующие подразделения:</h3>
+                    <h3>{cont.h3}</h3>
                     <ul>
-                        <li onClick={()=>{ history.push('/service/1')}}>Отдел наземных операций</li>
-                        <li onClick={()=>{ history.push('/service/2')}}>Отдел морских операций</li>
-                        <li onClick={()=>{ history.push('/service/3')}}>Технический отдел</li>
+                        <li onClick={()=>{ history.push('/service/1')}}>{cont.firstUl[0]}</li>
+                        <li onClick={()=>{ history.push('/service/2')}}>{cont.firstUl[1]}</li>
+                        <li onClick={()=>{ history.push('/service/3')}}>{cont.firstUl[2]}</li>
                         {/*<li onClick={()=>{ history.push('/service/4')}}>Юридический департамент</li>*/}
-                        <li onClick={()=>{ history.push('/service/5')}}>Отдел специальных операций</li>
-                        <li onClick={()=>{ history.push('/service/6')}}>Отдел аналитики</li>
+                        <li onClick={()=>{ history.push('/service/5')}}>{cont.firstUl[3]}</li>
+                        <li onClick={()=>{ history.push('/service/6')}}>{cont.firstUl[4]}</li>
                     </ul>
 
-                    <h3>Нашими клиентами являются:</h3>
+                    <h3>{cont.h3_2}</h3>
                     <ul>
-                        <li>Профессионалы, способные решать многозадачники в любых, самых сложных условиях</li>
-                        <li>Участники антитеррористической операции на Донбасс</li>
-                        <li>Сотрудники спецслужб, служившие в горячих точках</li>
-                        <li>Высококлассные инструктора по безопасности</li>
-                        <li>Телохранители, работающие с ВИП-персонами</li>
-                        <li>Юристы и аудиторы</li>
-                        <li>Аналитики экспертного уровня</li>
+                        <li>{cont.secUl[0]}</li>
+                        <li>{cont.secUl[1]}</li>
+                        <li>{cont.secUl[2]}</li>
+                        <li>{cont.secUl[3]}</li>
+                        <li>{cont.secUl[4]}</li>
+                        <li>{cont.secUl[5]}</li>
+                        <li>{cont.secUl[6]}</li>
                     </ul>
-                    <p><span className="padding">Все</span> сотрудники прошли специальную психологическую и медицинскую подготовку. </p>
-                    <h3>В зависимости от ситуации, компания «Руевит» готова предоставить следующие услуги:</h3>
+                    <p>{cont.textAfterUl}</p>
+                    <h3>{cont.h3_3}</h3>
                     <ul>
-                        <li>Охрана стратегически важных объектов (заводы, месторождения, порты)</li>
-                        <li>Обеспечение порядка при проведении общественных мероприятий</li>
-                        <li>Предоставление групп быстрого реагирования</li>
-                        <li>Противодействие рейдерским захватам</li>
-                        <li>Отражение атак, направленных на захват интеллектуальных или физических активов</li>
-                        <li>Вооруженное сопровождение ценных грузов</li>
-                        <li>Военизированный наземный и морской конвой</li>
-                        <li>Выполнение задач клиента на территориях повешенной опасности</li>
-                        <li>Личная безопасность</li>
-                        <li>Скрытая охрана ВИП персон</li>
-                        <li>Обеспечение безопасности групп на выездных мероприятиях</li>
-                        <li>Аналитика деятельности организации</li>
-                        <li>Сбор информации, внедрение, вербовка</li>
-                        <li>Выявление угроз, определение их степени и разработка пошагового плана мероприятия по их нейтрализации</li>
-                        <li>Техническое обслуживание бронетехники и воздушного транспорта</li>
+                        <li>{cont.thirdUl[0]}</li>
+                        <li>{cont.thirdUl[1]}</li>
+                        <li>{cont.thirdUl[2]}</li>
+                        <li>{cont.thirdUl[3]}</li>
+                        <li>{cont.thirdUl[4]}</li>
+                        <li>{cont.thirdUl[5]}</li>
+                        <li>{cont.thirdUl[6]}</li>
+                        <li>{cont.thirdUl[7]}</li>
+                        <li>{cont.thirdUl[8]}</li>
+                        <li>{cont.thirdUl[9]}</li>
+                        <li>{cont.thirdUl[10]}</li>
+                        <li>{cont.thirdUl[11]}</li>
+                        <li>{cont.thirdUl[12]}</li>
+                        <li>{cont.thirdUl[13]}</li>
+                        <li>{cont.thirdUl[14]}</li>
                     </ul>
-                    <p><span className="padding">Учитывая</span> сложную ситуацию в стране, мы работаем в режиме 24/7, что позволяет оперативно реагировать на проблемы наших клиентов</p>
-                    <p><b>Связаться с нами можно посредством специальной формы на сайте</b></p>
+                    <p>{cont.textAfterThirdUl}</p>
+                    <p><b>{cont.oneMore}</b></p>
                 </div>
             </div>
         )

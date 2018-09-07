@@ -7,6 +7,7 @@ export default class ArticleDraft extends Component {
         super(props);
         // console.log(convertFromRaw(JSON.parse(props.content)).length);
         this.state = {
+            lang: props.changeContent,
             editorState: (()=>{
                 if(props.content.length > 20){
                     return EditorState.createWithContent(convertFromRaw(JSON.parse(props.content)));
@@ -19,14 +20,30 @@ export default class ArticleDraft extends Component {
         // window.scrollTo(0, 0);
     }
 
-    // componentWillReceiveProps(newProps){
-    //     console.log('New props: ', newProps);
-    //     if(newProps.content.length > 20){
-    //         this.setState({
-    //             editorState: EditorState.createWithContent(convertFromRaw(JSON.parse(newProps.content)))
-    //         })
-    //     }
-    // }
+    componentWillReceiveProps(newProps){
+        // console.log('New props: ', newProps);
+        const { lang } = this.state;
+        if(lang !== newProps.changeContent){
+            if(newProps.content.length > 20) {
+
+                this.setState({
+                    editorState: EditorState.createWithContent(convertFromRaw(JSON.parse(newProps.content))),
+                    lang: newProps.changeContent
+                })
+            }else{
+                this.setState({
+                    editorState:  EditorState.createEmpty(),
+                    lang: newProps.changeContent
+                })
+
+            }
+        }
+        // if(newProps.content.length > 20){
+        //     this.setState({
+        //         editorState: EditorState.createWithContent(convertFromRaw(JSON.parse(newProps.content)))
+        //     })
+        // }
+    }
     onChange(editorState){
         this.setState({editorState});
         const { getContentToSave } = this.props;
